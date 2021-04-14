@@ -39,7 +39,7 @@ export default class ClassLecturePage extends React.Component {
         this.setState((prevState) => ({
           vaccinesLeft: prevState.vaccinesLeft - 5,
         }));
-      };
+      }; /*What if this was 500??*/
       this.setState({ vaccineInterval: setInterval(updateVaccinesLeft, 1000) });
     }
   }
