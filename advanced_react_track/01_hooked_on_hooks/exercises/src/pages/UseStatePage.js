@@ -11,21 +11,31 @@ export default function UseStatePage(props) {
       <div className="todo-container">
         TODO: Make the left button increment the people hyped by 5, make the
         right button reset it back to zero!
-        <p>(Also sign up for Day of Code)</p>
+        <p>
+          (Also sign up for Day of Code and follow our new{" "}
+          <a
+            href="https://www.instagram.com/acm.teachla/?hl=en"
+            rel="noreferrer noopener"
+            target="_blank"
+          >
+            Instagram
+          </a>
+          )
+        </p>
       </div>
 
       <div>There are 0 people hyped for Day Of Code on April 24!</div>
 
       <div>
-        {`Don't forget to `}
+        Don't forget to{" "}
         <a
           href="https://docs.google.com/forms/d/e/1FAIpQLScrZqKPH2OK99jpT9BcOMCJrORkxl5NPKXxbtCvRnoS8qQCXw/viewform"
           rel="noreferrer noopener"
           target="_blank"
         >
           sign up
-        </a>
-        {` to volunteer if you haven't yet!`}
+        </a>{" "}
+        to volunteer if you haven't yet!
       </div>
     </div>
   );
