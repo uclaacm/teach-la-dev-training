@@ -130,3 +130,18 @@ If you don't know where to even begin, here's some key things you should probabl
 - About/Bio
 - Experiences/Portfolio/Projects
 - Contact Info/Other links
+
+Side note: The reason we use `index.html` as the name for the page is that this is the default file to use to render in a folder for a website. So when we will be deploying the website, GitHub Pages will know to render `index.html` automatically whenever we go to the link of the wbesite. If we name it something else like `hello.html`, then we'd have to specify `https://mywebsite.com/hello.html` for the correct file to be rendered.
+
+Second side note: If you'd like to add multiple pages, you can do so by creating a folder inside the repo, named for the endpoint you'd like it to be at, and creating an `index.html` file in the folder. For example, you could have have a separate page that you want to be accessible at `https://mywebsite.com/about`, by having the following file structure:
+```
+./
+├─ about/
+    └─ index.html
+└─ index.html
+``` 
+
+### Publish your website!
+When we've got the content to our site written, we'd probably want to take a look and see it in action right? Let's deploy it! Lucky for us, GitHub Pages makes this super simple and we don't actually need to do any action to publish this. GitHub allows each user and each organization to have one homepage hosted for them (for free) at the link `https://YOUR_GITHUB_USERNAME.github.io`. Even better, it's updated automatically whenever we push to the repository! Check it out!
+
+You can also deploy subpages at your site and even publish sites written with Jekyll or Gatsby. Check out the [official documentation](https://pages.github.com/) for more information.
