@@ -3,7 +3,7 @@ Hello helloo :)
 
 Welcome to the `Intro to React` Track for Spring 2021~ If you've got some experience of HTML/CSS/Javascript, then this track is right for you! 
 
-The exact schedule of the track is TBD depending on how much prior knowledge most people have in the content, but by the end of the track, you will be able to use Github reliably and make your own dynamic React apps, where you ~could~ make your own food Tinder. 
+The exact schedule of the track is TBD depending on how much prior knowledge most people have in the content, but by the end of the track, you will be able to use Github reliably and make your own dynamic React apps, where you  \~could\~ make your own food Tinder. 
 
 Other things that you might learn could include Figma prototyping and designing, CI/CD, testing, Redux, and backend with firebase!
 
