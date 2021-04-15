@@ -9,4 +9,4 @@ There are none! :)
 
 ## Table of Content
  
-- [Session 1: Intro to HTML](https://github.com/uclaacm/teach-la-dev-training-s21/tree/main/intro_track/session_1_intro_to_html)
+- [Session 1: Intro to HTML](https://github.com/uclaacm/teach-la-dev-training-s21/tree/main/intro_to_web_dev/session_1_intro_to_html)
