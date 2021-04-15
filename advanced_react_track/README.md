@@ -10,13 +10,4 @@ A look into how React has evolved over the years, going over significant changes
 
 # Table of Contents
 
-## Session 1: Getting "Hooked" on React Hooks
-
-When [React 16.8](https://reactjs.org/docs/hooks-intro.html) launched back in late 2018, the introduction of functional hooked components completely flipped the paradigm on React's traditional class-based component creation style, simplifying logic and improving readability for complex React components!
-
-### Topics Covered
-
-- Why Hooked Components?
-- Transitioning from class-based to hooked functional React components
-- The hooked way of thinking
-- React 16.8's first hooks: `useState` and `useEffect`
+## [Session 1: Getting "Hooked" on React Hooks](https://github.com/uclaacm/teach-la-dev-training-s21/tree/main/advanced_react_track/01_hooked_on_hooks)

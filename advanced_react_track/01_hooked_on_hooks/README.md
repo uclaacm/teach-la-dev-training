@@ -1,6 +1,6 @@
 # Getting "Hooked" on React Hooks
 
-Why Switch From Writing Class-based Components To Hooked Components?
+When [React 16.8](https://reactjs.org/docs/hooks-intro.html) launched back in late 2018, the introduction of functional hooked components completely flipped the paradigm on React's traditional class-based component creation style, simplifying logic and improving readability for complex React components!
 
 # The Problems With Classes
 
@@ -24,9 +24,13 @@ Since JavaScript is a functional programming language, creating React Components
 
 ![](./pictures/ewClasses.png)
 
+# Why Hooked Components?
+
 ## Hooks simplify logic and add readability to components.
 
 When [React Hooks](https://reactjs.org/docs/hooks-faq.html) were introduced to the world during React Conference 2018, they changed the mindset of creating complex React components and became the de-facto recommended way over React Classes.
+
+## The Hooked Way Of Thinking
 
 ### "With hooks we separate code not based on the lifecycle method name but based on what the code is doing"
 
@@ -72,4 +76,4 @@ Instead of having a separate componentWillUnmount method, you can handle all the
 
 # Conclusion
 
-Hooked components reduce the boilerplating necessary for Class-based React Components, and stick true to JavaScript being a **functional** programming language as opposed to an Object-Oriented one.
+Hooked components reduce the boilerplating necessary for Class-based React Components, and stick true to JavaScript being a **functional** programming language as opposed to an Object-Oriented one. While it's unnecessary to convert class-based components you've made in the past to functional hooked ones, it's good practice to learn how they work and create hooked components in the future!
