@@ -15,6 +15,7 @@ In between our weekly seesions on Thursdays at 6, if you are interested, we coul
 - make a group project! (food Tinder?)
 - practice with individual projects! (personal portfoliio/todo list/simple food tinder)
 - practice with tickets for our Learning Labs (they'll be public and used by us!)
+
 We'll decide on our selection soon :)
 
 ## Table of Contents
