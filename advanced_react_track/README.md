@@ -10,4 +10,4 @@ A look into how React has evolved over the years, going over significant changes
 
 # Table of Contents
 
-## [Session 1: Getting "Hooked" on React Hooks]()
+## [Session 1: Getting "Hooked" on React Hooks](https://github.com/uclaacm/teach-la-dev-training-s21/tree/main/advanced_react_track/01_hooked_on_hooks)
