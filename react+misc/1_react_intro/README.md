@@ -9,9 +9,10 @@ Welcome welcome :) we are super excited for you to be here! In this first sessio
 
 Here is the [teacher's guide meeting notes!](https://docs.google.com/document/d/1gkCFEeAHACphhTCGlzkVO8apYswCR0_XvVrQ8STb1Fo/edit#heading=h.s4rjdr4v68nz) and [notes from the meeting](https://docs.google.com/document/d/11Ezv0rzQ8WOjmSbR029Ws62E-UwTj9uTurvaYhyzztM/edit#heading=h.pn04ldq39spy) It's somewhat boring stuff so this README would probably be a better read :)
 
-## Please also finish this before our next sesh!
+# Please finish this before our next sesh!
 - Download Node
 - [Create a React App and practice simple JSX](#tryout)
+- Put onto github, and bop me on slack when you done!
 
 ## Review of Git 
 [Git-it](https://github.com/jlord/git-it-electron ) is a super easy to use desktop app that helps you learn git if you need more resources!
