@@ -11,12 +11,14 @@ Other things that you might learn could include Figma prototyping and designing,
 Some knowledge of HTML/CSS/Javascript!
 
 ## Practice
-In between our weekly seesions on Thursdays at 6, if you are interested, we could 
-- make a group project! (food Tinder?)
-- practice with individual projects! (personal portfoliio/todo list/simple food tinder)
+In between our weekly seesions on Thursdays at 6, we will likely
+- practice with individual projects! (simple food tinder)
 - practice with tickets for our Learning Labs (they'll be public and used by us!)
 
-We'll decide on our selection soon :)
-
 ## Table of Contents
-- Session 1: Basic Intro of React
+- [Session 1: Basic Intro of React](https://github.com/uclaacm/teach-la-dev-training-s21/tree/main/react%2Bmisc/1_react_intro)
+
+# Spring Specific Info
+- Feel free to bop Regina Wang on Slack :) she responds very quickly and is mostly friendly i think 
+- Office hours/hangout/work session on Mondays at 2-4 PM! 
+   - not mandatory, but feel free to hang out :P
