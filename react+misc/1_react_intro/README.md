@@ -9,18 +9,22 @@ Welcome welcome :) we are super excited for you to be here! In this first sessio
 
 Here is the [teacher's guide meeting notes!](https://docs.google.com/document/d/1gkCFEeAHACphhTCGlzkVO8apYswCR0_XvVrQ8STb1Fo/edit#heading=h.s4rjdr4v68nz) and [notes from the meeting](https://docs.google.com/document/d/11Ezv0rzQ8WOjmSbR029Ws62E-UwTj9uTurvaYhyzztM/edit#heading=h.pn04ldq39spy) It's somewhat boring stuff so this README would probably be a better read :)
 
+## Please also finish this before our next sesh!
+- Download Node
+- [Create a React App and practice simple JSX](#tryout)
+
 ## Review of Git 
 [Git-it](https://github.com/jlord/git-it-electron ) is a super easy to use desktop app that helps you learn git if you need more resources!
-[ ] git init
-[ ] git clone <url>
-[ ] git branch <branch-name>
-[ ] git checkout <branch-name>
-[ ] git pull <origin-name>
-[ ] git merge <branch-name>
-[ ] git diff 
-[ ] git add <files>
-[ ] git commit -m <message>
-[ ] git push
+- git init
+- git clone <url>
+- git branch <branch-name>
+- git checkout <branch-name>
+- git pull <origin-name>
+- git merge <branch-name>
+- git diff 
+- git add <files>
+- git commit -m <message>
+- git push
 
 ## Node Intro
 ### What are Node and NPM?
@@ -262,19 +266,23 @@ If the value `greeting` is truthy, then it will be returned. Otherwise, 'hello' 
 Babel compiles JSX down to React.createElement() calls.
 
 These two examples are identical:
-
+```js
 const element = (
   <h1 className="greeting">
     Hello, world!
   </h1>
 );
+```
+```js
 const element = React.createElement(
   'h1',
   {className: 'greeting'},
   'Hello, world!'
 );
-React.createElement() performs a few checks to help you write bug-free code but essentially it creates an object like this:
+```
+`React.createElement()` performs a few checks to help you write bug-free code but essentially it creates an object like this:
 
+```js
 // Note: this structure is simplified
 const element = {
   type: 'h1',
@@ -283,6 +291,7 @@ const element = {
     children: 'Hello, world!'
   }
 };
+```
 These objects are called “React elements”. You can think of them as descriptions of what you want to see on the screen. React reads these objects and uses them to construct the DOM and keep it up to date.
 
 #### Things that were renamed
@@ -299,7 +308,8 @@ We can include other files in our React components very easily through `import` 
 
 Typically for a React component, this means that we style our JSX through a CSS file. In the case of our App component, this is `App.css`.
 
-### Quick Try it Out Yourself!
+# <a name="tryout"></a>Quick Try it Out Yourself! 
+(Please do before our next meeting!)
 - Create a react app
 - In app.js, create a function that returns your favorite midnight snack as a string
 - In your App JSX, call the function and have your app display the favorite food string 
