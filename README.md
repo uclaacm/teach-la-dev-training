@@ -4,6 +4,7 @@
 The series does not require any prior experience and will teach you enough to make a beautiful static website using HTML, CSS, and vanilla Javascript. 
 
 # Intro to React
+This track will help you learn how to use Github reliably and make your own dynamic React apps. Other things that you might learn could include Figma prototyping, CI/CD, testing, Redux, and backend with firebase!
 
 # Advanced React
 
