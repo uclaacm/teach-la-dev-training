@@ -16,7 +16,7 @@ The main problem with classes was that the component lifecycle along with necess
 
 ## Writing Class-Based Components: WHEN Our Component Does This, We...
 
-**INSERT CHART FROM SESSION HERE**
+![](./pictures/classLogic.png)
 
 ## Hidden Logic behind Necessary Boilerplating
 
@@ -32,13 +32,13 @@ When [React Hooks](https://reactjs.org/docs/hooks-faq.html) were introduced to t
 
 ## The Hooked Way Of Thinking
 
-### "With hooks we separate code not based on the lifecycle method name but based on what the code is doing"
+**"With hooks we separate code not based on the lifecycle method name but based on what the code is doing"**
 
-### - Dan Abramov, React Development Team Member
+**- Dan Abramov, React Development Team Member**
 
 ## Writing Hooked Components: WHAT Do We Want To Keep Track of And HOW?
 
-**INSERT CHART FROM SESSION HERE**
+![](./pictures/hooksLogic.png)
 
 # Converting From Classes To Hooks
 
