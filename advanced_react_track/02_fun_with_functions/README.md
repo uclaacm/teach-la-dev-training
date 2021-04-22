@@ -4,7 +4,7 @@ Back in 2009, JavaScript released [EcmaScript 5](https://dev.to/skaytech/history
 
 # What Are Programming Paradigms?
 
-![](./pictures/programmingParadigms)
+![](./pictures/programmingParadigms.png)
 
 Programming paradigms are a way of thinking, and the way that you think about making your code!
 
@@ -27,7 +27,7 @@ Let's take a look at a function that does things imperatively!
 
 **How Would We Do This Imperatively?**
 
-![](./pictures/imperativeAddition)
+![](./pictures/imperativeAddition.png)
 
 As we can see here, **imperative** programming styles explains **HOW** your code works and the step by step process of how you can achieve your desired result.
 
@@ -45,7 +45,7 @@ As we can see here, **imperative** programming styles explains **HOW** your code
 
 We abstract the logic of how it works behind a function, and show logic on **WHAT** output we want the code to produce!
 
-![](./pictures/declarativeAddition)
+![](./pictures/declarativeAddition.png)
 
 **INSERT TABLE HERE**
 
@@ -63,19 +63,19 @@ That was an example of array reducing, let's take a brief look at some other coo
 
 ## Array Mapping
 
-![](./pictures/mappingFunction)
+![](./pictures/mappingFunction.png)
 
 Take in up to 3 values, and return a new array that is a modified version of the source array!
 
-![](./pictures/mappingOutput)
+![](./pictures/mappingOutput.png)
 
 ## Array Filtering
 
-![](./pictures/filteringFunction)
+![](./pictures/filteringFunction.png)
 
 Take in up to 4 values and return a new array of only the values that "pass" the filtering function you put in!
 
-![](./pictures/filteringOutput)
+![](./pictures/filteringOutput.png)
 
 # Putting Everything Together!
 
@@ -85,9 +85,11 @@ finally reduce that **new new** array to a single accumulated value?
 With the paradigm of functional programming, we never change the value of the array and instead create
 **new** ones each time, operating on them with the various array operations we learned!
 
-![](./pictures/filteringFunction)
+![](./pictures/multiActionFunction.png)
 
-![](./pictures/filteringOutput)
+Wow, we did all those operations in a single return statement!
+
+![](./pictures/multiActionOutput.png)
 
 ## Why Is Declarative Programming Useful For React Development?
 
@@ -105,4 +107,5 @@ Today we've touched upon
 - Array Mapping
 - Array Reducing
 - Array Filtering
-  And in our exercises for this week we can see just how useful they are in React, since we're working with arrays of objects and react components all the time!
+  
+In our exercises for this week we can see just how useful they are in React, since we're working with arrays of objects and react components all the time!
