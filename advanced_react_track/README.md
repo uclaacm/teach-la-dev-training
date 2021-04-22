@@ -12,6 +12,8 @@ A look into how React has evolved over the years, going over significant changes
 
 ## [Session 1: Getting "Hooked" on React Hooks](https://github.com/uclaacm/teach-la-dev-training-s21/tree/main/advanced_react_track/01_hooked_on_hooks)
 
+## [Session 2: Fun With Functional Programming](https://github.com/uclaacm/teach-la-dev-training-s21/tree/main/advanced_react_track/02_fun_with_functions)
+
 # Getting started!
 
 Since all of us are currently on projects right now, it's good to get into the practice of looking at existing code-bases and adding in features/improvements as necessary! 
