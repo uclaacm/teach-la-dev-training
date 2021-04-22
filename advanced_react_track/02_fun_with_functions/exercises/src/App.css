@@ -2,37 +2,58 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.content-container {
+  background-color: #bebebe;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  font-size: calc(10px + 4vmin);
+}
+
+.subcomponent-container {
+  padding: 2vw;
+  background-color: #ebebeb;
+}
+
+.todo-container {
+  background-color: rgb(197, 255, 130);
+  margin: 2vw;
+  padding: 2vw;
+}
+
+.button-container {
   font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 5px;
+}
+
+.active-button {
+  background-color: rgb(197, 255, 130);
+}
+
+.restaurant-image {
+  max-height: 20vw;
+  max-width: 20vw;
+}
+
+.restaurant-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 2vw;
+  background-color: rgb(197, 255, 130);
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+}
+
+.restaurant-subheading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 60vw;
 }
 
 .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

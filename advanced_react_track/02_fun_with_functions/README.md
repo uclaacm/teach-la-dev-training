@@ -4,11 +4,13 @@ Back in 2009, JavaScript released [EcmaScript 5](https://dev.to/skaytech/history
 
 # What Are Programming Paradigms?
 
+![](./pictures/functionalOOP.png)
+
 ![](./pictures/programmingParadigms.png)
 
 Programming paradigms are a way of thinking, and the way that you think about making your code!
 
-# JavaScript As A Functional Programming Language
+# JavaScript As A [Functional Programming](https://medium.com/@shaistha24/functional-programming-vs-object-oriented-programming-oop-which-is-better-82172e53a526) Language
 
 In functional programming languages, you break up tasks into smaller subtasks and composing functions on-top of each other.
 Instead of **changing** existing values, you create **new ones** based off of input!
@@ -49,9 +51,15 @@ We abstract the logic of how it works behind a function, and show logic on **WHA
 
 **INSERT TABLE HERE**
 
-**How Do Array Reducers Work?**
+**How Do [Array Reducers](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce) Work?**
 
 By taking in up to four different values, you return a single value based off of the values of each element of the array you put in!
+
+## Reducers Require A Bit More Work With Objects/Nested Data!
+
+![](./pictures/reducingObjects.png)
+
+When you use reducers with objects, it's important to pass in an initial value to your accumulated value when necessary to prevent dumb things like the cursed **[Object Object]datadata** nonsense.
 
 ## Features of Declarative Programming
 
@@ -61,7 +69,7 @@ By taking in up to four different values, you return a single value based off of
 
 That was an example of array reducing, let's take a brief look at some other cool things you can do with arrays!
 
-## Array Mapping
+## [Array Mapping](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
 
 ![](./pictures/mappingFunction.png)
 
@@ -69,13 +77,25 @@ Take in up to 3 values, and return a new array that is a modified version of the
 
 ![](./pictures/mappingOutput.png)
 
-## Array Filtering
+## [Array Filtering](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
 
 ![](./pictures/filteringFunction.png)
 
 Take in up to 4 values and return a new array of only the values that "pass" the filtering function you put in!
 
 ![](./pictures/filteringOutput.png)
+
+## [Array Sorting](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+
+![](./pictures/sortingFunction.png)
+
+Take in a sorting function that compares values within the array, and sort them accordingly based on what the
+comparsion function returns!
+
+Sorting functions are different from all the other ones we've discussed so far in that they actually **change** the value
+of the original array you put in as opposed to returning a new copy.
+
+![](./pictures/sortingOutput.png)
 
 # Putting Everything Together!
 
@@ -107,5 +127,8 @@ Today we've touched upon
 - Array Mapping
 - Array Reducing
 - Array Filtering
-  
-In our exercises for this week we can see just how useful they are in React, since we're working with arrays of objects and react components all the time!
+- Array Sorting
+
+In our exercises for this week we can see just how useful they are in React, since we're working with arrays of objects and react components all the time through a fun exercise of making the next Yelp!
+
+![](./pictures/restaurantExercises.png)
