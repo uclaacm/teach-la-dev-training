@@ -2,11 +2,12 @@
 <html>
   <head>
     <!-- Metadata! -->
+    <link href="./style.css" type="text/css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"> 
   </head>
   <body>
-    <h1>My Portfolio</h1>
-
-    <div>
+    <div id="navbar">
       <h1>Eren Yeager</h1>
       <hr>
       <ul>
@@ -16,8 +17,10 @@
       </ul>
     </div>
     
-    <div>
-      <div>
+    <div id="content">
+      <h1>My Portfolio</h1>
+
+      <div class="project">
         <h2>Project 1</h2>
         <hr>
         <p>This is a <a href="https://www.google.com/">website</a>.</p>
@@ -29,7 +32,7 @@
         </ul>
       </div>
 
-      <div>
+      <div class="project">
         <h2>Project 2</h2>
         <hr>
         <p>I have another project!</p>
@@ -40,7 +43,7 @@
         </ul>
       </div>
 
-      <div>
+      <div class="project">
         <h2>Project 3</h2>
         <hr>
         <p>I really enjoyed this.</p>
@@ -52,10 +55,10 @@
           <li>Java</li>
         </ul>
       </div>
-    </div>
-
-    <div>
-      Made with <span><img src="./heart.svg"/></span> from ACM TeachLA.
+      
+      <div>
+        <p>Made with <span id="heart"><img src="./heart.svg"/></span> from ACM TeachLA.</p>
+      </div>
     </div>
   </body>
 </html>
