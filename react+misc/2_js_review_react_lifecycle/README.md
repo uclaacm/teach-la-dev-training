@@ -18,9 +18,9 @@ In this second session, we will be going over:
 Here is the [teaching guide meeting notes!](https://docs.google.com/document/d/1_Efs2RPFctR7pvc9H0FKwW392MyOPerVHyPsx84sxEU/edit?usp=sharing) and [notes from the meeting](https://docs.google.com/document/d/1DR_JB2zUS0Sb1Cdx_q1r5LZbHlfJQtmBTpBUMbZ6Vdk/edit?usp=sharing) It's somewhat boring stuff so this README would probably be a better read :)
 
 # Mini Project Build On!
-- Finish last week's `Create React App` task. See [here](https://github.com/uclaacm/teach-la-dev-training-s21/edit/main/react+misc/1_react_intro/README.md) for more details. (~30-40 minutes)
-- [This week's minitask (With learning, ~40-60 minutes)](#tryout) 
-- Here is a [super basic example](https://teach-la-react-training-s21.netlify.app/2)!
+- Finish last week's `Create React App` task. See [here](https://github.com/uclaacm/teach-la-dev-training-s21/edit/main/react+misc/1_react_intro/README.md) for more details. 
+- [This week's minitask](#tryout) 
+- Here is a [super basic example](https://regina-wang.netlify.app/)!
 
 # JSX
 ## What did we learn last week?

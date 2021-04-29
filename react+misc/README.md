@@ -17,6 +17,7 @@ In between our weekly seesions on Thursdays at 6, we will likely
 
 ## Table of Contents
 - [Session 1: Basic Intro of React](https://github.com/uclaacm/teach-la-dev-training-s21/tree/main/react%2Bmisc/1_react_intro)
+- [Session 2: JS for React, Life Cycle of React](https://github.com/uclaacm/teach-la-dev-training-s21/tree/main/react%2Bmisc/2_js_review_react_lifecycle)
 
 # Spring Specific Info
 - Feel free to bop Regina Wang on Slack :) she responds very quickly and is mostly friendly i think 
