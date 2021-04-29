@@ -20,7 +20,7 @@ Here is the [teaching guide meeting notes!](https://docs.google.com/document/d/1
 # Mini Project Build On!
 - Finish last week's `Create React App` task. See [here](https://github.com/uclaacm/teach-la-dev-training-s21/edit/main/react+misc/1_react_intro/README.md) for more details. (~30-40 minutes)
 - [This week's minitask (With learning, ~40-60 minutes)](#tryout) 
-- Here is a [super basic example](https://regina-wang.netlify.app/)!
+- Here is a [super basic example](https://teach-la-react-training-s21.netlify.app/2)!
 
 # JSX
 ## What did we learn last week?
