@@ -95,7 +95,7 @@ In general, try to have a different file for every React Component, and to expor
 
 You might need to pass functions as `props` to children components. Children components are components in a parent component's JSX. 
 
-Take a look at [App.js]() and [Task.js]() for structuring a todo list.
+Take a look at [App.js](https://github.com/uclaacm/teach-la-dev-training-s21/blob/main/react%2Bmisc/3_review_react%2Breact_structure/todo-list/src/App.js) and [Task.js](https://github.com/uclaacm/teach-la-dev-training-s21/blob/main/react%2Bmisc/3_review_react%2Breact_structure/todo-list/src/Task.js) for structuring a todo list.
 
 ## Other Info
 The rest of the time was spent building the ToDo list, so <b>make sure to take a look at `App.js` and `Task.js`</b> and check that it all makes sense. 
@@ -160,7 +160,7 @@ for `ComponentDidMount`, note the `},[])`
 for `ComponentWillUnmount`, note that the `useEffect` is returning a cleanup function that will run when the component is unmounting.
 
 ### Conclusion
-Hopefully after this, you understand React more clearly and are able to make the build-along [here](TODO FILL IN)!! 
+Hopefully after this, you understand React more clearly and are able to make the build-along [here](https://github.com/uclaacm/teach-la-dev-training-s21/tree/main/react%2Bmisc/3_review_react%2Breact_structure#mini-project-build-on)!! 
 
 # Resources 
 - [Why and when to use Arrow Function](https://www.freecodecamp.org/news/when-and-why-you-should-use-es6-arrow-functions-and-when-you-shouldnt-3d851d7f0b26/)
