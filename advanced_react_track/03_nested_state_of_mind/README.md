@@ -70,7 +70,7 @@ With the use of the spread operator, we can say that we want to keep the rest of
 
 ![](./pictures/fnPayload.png)
 
-By passing in a payload inside the action object which gets passed into your reducer, you can do specific things to only parts of your function! In this case, by passing in the name of the specific object we want to reduce, we can specify only incrementing one part of our nested state.
+By passing in a payload inside the action object which gets passed into your reducer, you can do specific things to only parts of your nested data! In this case, by passing in the name of the specific object we want to reduce, we can specify only incrementing one part of our nested state.
 
 Here's how our entire function will look like after specifying a bunch of action.type cases!
 
@@ -87,7 +87,7 @@ The set up for using a reducer is similar to useState, by putting in a "getter" 
 Using a dispatcher, we can pass in our "action" object which we set up earlier to handle changes to our
 nested state object.
 
-![](./pictures/useReducerComponent.png)
+![](./pictures/useReducerDispatcher.png)
 
 # In Conclusion
 
