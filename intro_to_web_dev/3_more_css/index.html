@@ -20,11 +20,20 @@
     <div id="content">
       <h1>My Portfolio</h1>
 
+      <div class="project" id="box-model">
+        <h2>Project 0</h2>
+        <p>This is a <a href="https://www.google.com/">website</a>.</p>
+      </div>
+
       <div class="project">
         <h2>Project 1</h2>
         <hr>
         <p>This is a <a href="https://www.google.com/">website</a>.</p>
-        <img src="./project1.jpg"/>
+        <!-- Note: I put a div around the image and the shadow so that I can meaure top from the same point that image starts at -->
+        <div class="image-wrapper">
+          <img src="./project1.jpg"/>
+          <div class="shadow" ></div>
+        </div>
         <p>Source: <a href="https://commons.wikimedia.org/wiki/File:Sunset_at_Noronhas%27_beach.jpg">NicolasAlbuquerqueWolf</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, via Wikimedia Commons</p>
         <ul>
           <li>HTML</li>

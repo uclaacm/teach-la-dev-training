@@ -2,6 +2,7 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
+  position: relative;
 }
 
 div h1 {
@@ -54,18 +55,84 @@ img {
 }
 
 .project {
+  position: relative;
   margin: 1rem; 
 }
 
 .project img {
   border: 3px #242221 solid;
+  z-index: 1;
+  position: relative;
+  width: 500px;
+  /* Note: I use border-box here to make sure the border of the images are accounted for in the 500px width */
+  box-sizing: border-box; 
 }
 
 .project p {
   /* visibility: hidden; */
   /* display: none; */
+  float: right;
 }
 
 #heart img {
   width: 1rem;
+}
+
+#box-model {
+  background: rgb(253, 183, 206);
+  width: 100px;
+  height: 500px;
+  box-sizing: border-box;
+  margin: 20px 30px;
+}
+
+#box-model * {
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid black;
+}
+
+.project ul {
+  display: flex;
+  flex-direction: row;
+  /* height: 200px;
+  width: 500px; */
+  /* border: red 1px solid; */
+}
+
+.project ul li {
+  margin: 0.2rem;
+  background: #e2cccc;
+  padding: 0.5rem;
+  border-radius: 5px;
+  /* border: 1px solid black; */
+  /* flex-grow: 1; */
+  /* display: inline; */
+  /* display: block; */
+}
+
+.project ul li:nth-child(1) {
+  /* flex-grow: 2; */
+}
+/* 
+a {
+  display: block;
+} */
+
+.project .image-wrapper {
+  position: relative;
+  width: max-content;
+  /* width: 500px;
+  height: 350px; */
+}
+
+.project .shadow {
+  background: #242221;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0.5vw;
+  left: 0.5vw;
+  width: 500px;
+  z-index: 0;
 }
