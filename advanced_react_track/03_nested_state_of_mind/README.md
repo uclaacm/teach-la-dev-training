@@ -91,6 +91,18 @@ nested state object.
 
 # In Conclusion
 
+As we scale up to building larger and larger web applications, we'll find that we can't simply store all our state logic in primitive values. Database fetching, API calls, and more add another layer of complexity to how we want to store data in such a way that favors centralized state management through `useReducer` (and `useContext` which we'll cover later!).
+
+(Fun fact, the useState hook actually uses useReducer under the hood!)
+
+In fact, there have been a couple cases I've run into where useState simply wasn't powerful enough to handle rapid state changes and useReducer was the only way to move forward due to performance issues (more info about performance optimization through useReducer and more in the linked article!)
+
+From this [great guide](https://blog.logrocket.com/guide-to-react-usereducer-hook/) available online, there are a couple good rules of thumb to decide if you should switch your useState logic to a reducer.
+
+- If you want a centralized location to manage state (in our example, we used the reducer to handle everything with our chart data in the same function! (Incrementing, sorting, resetting)
+- If changes in state depend on each other (we wanted to sort our data after incrementing values, and useReducer gave us this performance guarantee!)
+- If you have data that is hard to represent as primitive data types (we had to store an array of objects, which add too many layers of complexity to useState
+
 In conclusion, the usage of reducers help us handle complex state when things can get unruly and help to reinforce our functional programming paradigm of having **immutable variables** and data transformation!
 
 ![](./pictures/reducerExample.png)
