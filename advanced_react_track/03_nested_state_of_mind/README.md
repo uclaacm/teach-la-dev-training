@@ -11,9 +11,6 @@ However, today we will discuss how state management is a bit more involved for n
 
 With the **useState** hook, the developers of React have added a level of optimization with `useState` and `useReducer`! Unlike the regular `this.setState` of React, React [doesn't trigger a re-render](https://github.com/facebook/react/blob/master/CHANGELOG.md#1680-february-6-2019) if the previous state's value was equal to the new state's value when you use `useState`, using an [`Object.is`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is) comparison
 
-
-
-
 ## What's the problem with this?
 
 Do you guys remember the tried and true [] !== [] example of why JavaScript is funky?? That's because JavaScript compares the references to the objects (like pointers) to determine equality.

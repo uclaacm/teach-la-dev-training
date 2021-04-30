@@ -159,3 +159,22 @@ export default function ReducerPage(props) {
     </div>
   );
 }
+
+const primitiveData = 32;
+
+const nestedArray = [1, 2, 3, 4];
+
+const nestedObjectArray = [
+  {
+    a: 1,
+    b: 2,
+  },
+  {
+    a: 1,
+    b: 2,
+  },
+  {
+    a: 1,
+    b: 2,
+  },
+];
