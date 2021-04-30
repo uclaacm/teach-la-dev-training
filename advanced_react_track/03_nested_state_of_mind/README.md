@@ -5,19 +5,18 @@ the `useState` hook!
 
 ![](https://raw.githubusercontent.com/uclaacm/teach-la-dev-training-s21/main/advanced_react_track/01_hooked_on_hooks/pictures/useState.png)
 
-However, today we will discuss how state management is a bit more involved for nested data like objects, arrays, and hownnew features of JavaScript like the [**spread operator**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) and new hooks help simplify things! We'll also cover how to do global
-
-# The Problem With Nested State
-
-Do you guys remember the tried and true [] !== [] example of why JavaScript is funky?? That's because JavaScript compares the pointers of the object to test for equality instead of the contents of the array.
+However, today we will discuss how state management is a bit more involved for nested data like objects, arrays, and how new features of JavaScript/React like the [**spread operator**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) and the `useReducer` hook help simplify things!
 
 # Nested State in Conjunction with the useState Hook
 
 With the **useState** hook, the developers of React have added a level of optimization with `useState` and `useReducer`! Unlike the regular `this.setState` of React, React [doesn't trigger a re-render](https://github.com/facebook/react/blob/master/CHANGELOG.md#1680-february-6-2019) if the previous state's value was equal to the new state's value when you use `useState`, using an [`Object.is`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is) comparison
 
+
+
+
 ## What's the problem with this?
 
-Do you remember the way that JavaScript checks to see if objects/arrays are equal? We compare the references to the objects (like pointers) to determine equality.
+Do you guys remember the tried and true [] !== [] example of why JavaScript is funky?? That's because JavaScript compares the references to the objects (like pointers) to determine equality.
 
 ![](./pictures/objComparison.png)
 
@@ -38,6 +37,10 @@ Deep copies are not connected to the original data, while shallow copies are "co
 by having the same reference pointer! (Which is why you get some non-update shenanigans sometimes, React uses `Object.is` to check for equality!)
 
 ![](./pictures/complexState.png)
+
+# What's useReducer?
+
+useReducer is a React hook that is similar to one feature of the previous state management tools that was not native to React at the time, [Redux](https://react-redux.js.org) and helps manage complex "nested" state!
 
 # How Does [useReducer](https://alligator.io/react/usereducer/) Work?
 
@@ -91,6 +94,6 @@ nested state object.
 
 # In Conclusion
 
-In conclusion, the usage of reducers help us handle complex state when things can get unruly and help to reinforce our functional programming paradigm of having **immutable variables** and data tranformation!
+In conclusion, the usage of reducers help us handle complex state when things can get unruly and help to reinforce our functional programming paradigm of having **immutable variables** and data transformation!
 
 ![](./pictures/reducerExample.png)
