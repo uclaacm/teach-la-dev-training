@@ -2,6 +2,8 @@
 
 NOTE: This writeup is largely based off Karen's Figma workshop. Thank you Karen!
 
+Archie, the design director is coming in today to go over figma!! :DD
+
 ## Table of Contents
 
 * [Planning](#planning)
