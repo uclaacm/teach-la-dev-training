@@ -31,29 +31,3 @@
 .active-button {
   background-color: rgb(197, 255, 130);
 }
-
-.restaurant-image {
-  max-height: 20vw;
-  max-width: 20vw;
-}
-
-.restaurant-bar {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  margin-left: 2vw;
-  background-color: rgb(197, 255, 130);
-  margin-top: 3vh;
-  margin-bottom: 3vh;
-}
-
-.restaurant-subheading {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  width: 60vw;
-}
-
-.App-link {
-  color: #61dafb;
-}
