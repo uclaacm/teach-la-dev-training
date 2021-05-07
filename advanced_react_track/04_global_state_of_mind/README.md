@@ -51,11 +51,11 @@ Similar to `useReducer`, context in React requires set-up both outside the compo
 
 # Context Set-Up Outside of Component Trees
 
-![context Setup](./pictures/createContext)
+![context Setup](./pictures/createContext.png)
 
 First, you have to create a context object that will be passed down to components in its context. If it is a static value that will not change, you can initialize it to the value within the context object. Otherwise, if you want to pass down state logic to multiple components, you can pass in an empty object and add in the state logic later.
 
-![Higher Order Component](./pictures/hoc)
+![Higher Order Component](./pictures/hoc.png)
 
 Once you have created a Context object, you must also create a Context Provider which will give the context to all "consumers" of the context. If your context is a static value, you can simply pass in its value in the `value` prop field. Otherwise, if you want to pass down state logic to consumers of the context, you must create a **Higher Order Component** which passes down state logic to its children through `ContextName.Provider`.
 
@@ -67,7 +67,7 @@ A Higher Order Component, also called `FragmentContainers` in other state manage
 
 Inside HOC's with React Hooks, we can do everything we do with usual components like `useState`, `useEffect`, etc. and **provide** the logic to children components (through `props.children`)! In the future we'll discuss how other concepts in React like custom hooks help to reduce rewriting code as well.
 
-![hoc wrapper](./pictures/hocWrapper)
+![hoc wrapper](./pictures/hocWrapper.png)
 
 Once you have created your Higher Order Component, simply wrap everything inside of it to give the context to everything within a component tree!
 
@@ -76,11 +76,11 @@ Once you have created your Higher Order Component, simply wrap everything inside
 Unlike with prop-drilling, you do not have to write all your state logic that you want to keep track of inside of the parent component of the tree.
 Instead, you can selectively choose parts of the context that you need by simply calling `useContext` with the context object.
 
-![intermediateContext](./pictures/intermediateContext)
+![intermediateContext](./pictures/intermediateContext.png)
 
 You can only `useContext` if somewhere above in the component tree (either the component or one of its parent components) is wrapped inside of the `ContextName.Provider` HOC.
 
-![childContext](./pictures/childContext)
+![childContext](./pictures/childContext.png)
 
 To use the context, simply destructure the value object of the context with the `useContext` hook, and pass in the `contextObject` to which your context provider is wrapped inside.
 
