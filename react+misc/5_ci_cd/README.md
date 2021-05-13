@@ -1,6 +1,21 @@
 # Quick Overview of CI/CD
 I honestly didn’t know about any of this until my internship last summer, and I was really confused about all of these things since I’d never learned it. I think it’s a great thing to get exposure to esp since it’s so important in work
 
+In this session, we will go over
+- What CI/CD is
+- Continuous Integration
+   - Tests
+   - Linting
+- Continuous Deployment
+   - Netlify
+- Other CI/CD Tools
+   - Git Actions
+
+## Build Along
+Feel free to use Netlify to deploy your build along!
+
+## [Attached Video is Here!](https://drive.google.com/file/d/1EIT2PqRpI878gzGJ2enGgrwMNbP3zJ2T/view?usp=sharing)
+
 ## CI/CD stands for
 Continuous Integration and Continuous Deployment
 
