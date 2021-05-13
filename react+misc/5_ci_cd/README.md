@@ -89,7 +89,8 @@ A great deployment site for static sites, it also does other things such as host
 
 What we want to do is that for every commit we push to main, we will automatically push it online.
 
-Take a look at the provided video for this part! (TODO: INSERT TIME)
+[Take a look at the provided video for this part, starting here!](https://drive.google.com/file/d/1EIT2PqRpI878gzGJ2enGgrwMNbP3zJ2T/view?t=12m35s)
+- 12m35s to 
 
 ## Tools for CI/CD
 Well that’s kinda cool right, but what if we made it so that you had to pass all tests and linting in order to push? We can do that!
@@ -103,8 +104,8 @@ There are several big tools for CI/CD, which I’ll name a few for exposure
 I’ll dive into Git Actions a little since it’s really easy to set up.
 ### Git Actions
 
-Check out video for this part! We will setup making sure repo 
+[Check out video for this part starting here!](https://drive.google.com/file/d/1EIT2PqRpI878gzGJ2enGgrwMNbP3zJ2T/view?t=20m45s) We will setup making sure repo 
 - builds properly before PR passes
 - Passes tests
 - Passes linting
-Otherwise checks will fail (TODO: add video time)
+Otherwise checks will fail
