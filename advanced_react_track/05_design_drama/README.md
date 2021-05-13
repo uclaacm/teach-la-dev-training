@@ -16,11 +16,11 @@ To take this up a notch, we'll take advantage of a Figma feature called **styles
 
 To create a color style, click the four dots next to the color. 
 
-![](images/color_styles_1.png)
+![](images/color_styles_1.PNG)
 
 Then, click the plus icon at the top to create a new color style!
 
-![](images/color_styles_2.png)
+![](images/color_styles_2.PNG)
 
 Now you can edit the color style by right clicking on it and clicking `Edit Style`. If you have multiple elements with this color style, they will all change at once. How convenient!
 
@@ -32,7 +32,7 @@ Text styles are done in a very similar way! Click the four dots next to the text
 
 As we've seen, styles let us change multiple elements at once. But here's another secret: they give us an easy place to access the CSS version of the style. First, select an element. On the right-hand menu, navigate to the "Inspect" tab. In the "Code" section, you'll find the CSS for it! Groovy :)
 
-![](images/css.png)
+![](images/css.PNG)
 
 **Note:** Typically, we will only use the font/color information not the position information. That is because we don't want to be using absolute positioning for all our elements!
 
@@ -64,7 +64,7 @@ This is especially helpful for very large companies. However, since TeachLA gene
 
 Click the play button in the top navigation panel to open your prototype in a new window!
 
-![](images/prototype_view_1.png)
+![](images/prototype_view_1.PNG)
 
 From here you can select the sizing you want. If you want to see what it would look like as a real website, click fill. If you want to see the whole frame, click fit. To take away the Figma UI, use `Ctrl./`. 
 
@@ -74,17 +74,17 @@ From here you can select the sizing you want. If you want to see what it would l
 
 Without selecting a specific element, click over to the "Prototype" tab on the right-hand menu. Here, you can choose what device to display your prototype on, the background color, and the starting frame. 
 
-![](images/prototype_settings.png)
+![](images/prototype_settings.PNG)
 
 ### Interactions & Animations
 
 Finally, the fun stuff! Interactions are a big part of prototyping. Let's start with the most basic one: navigation. Suppose we want to navigate to the home page when we click the title. First we select the title. Then, navigate to the "Prototype" tab on the right-hand menu.
 
-![](images/prototype_nav_1.png)
+![](images/prototype_nav_1.PNG)
 
 Hey, look at that new white circle on the side! If we click and drag, we can make an arrow pointing to any other element. In this case, let's point it to our home page frame. This arrow is called a **connection**. When we make connections between elements, we can create an **interaction**.
 
-![](images/prototype_nav_2.png)
+![](images/prototype_nav_2.PNG)
 
 The default interaction will be to navigate (action) on click (event listener), but feel free to play around with the different event listeners and actions. 
 
@@ -92,7 +92,7 @@ The default interaction will be to navigate (action) on click (event listener), 
 
 Now navigation is a big part of prototyping, but what about some more complex stuff? Let's say we want the instructions button to open up the instructions frame as an overlay. We'll make a connection from the button to the frame the same way we did before. This time, we'll change the action to "Open Overlay". Here, we can choose the position of the overlay, the background color, the closing mechanism, and more!
 
-![](images/prototype_overlay.png)
+![](images/prototype_overlay.PNG)
 
 ### More Info
 
@@ -105,9 +105,9 @@ Unfortunately, we don't have time to get into responsiveness in-depth today, but
 As a bare minimum, design both a desktop and a mobile version of your site. I would also encourage you to think about what your site should look like on large monitors or tablets!
 
 The inspect tab is a great tool while developing! Click this button to see what your page would look like on different screens. 
-![](inspect/css.png)
+![](images/inspect.PNG)
 Select "Responsive" to easily resize your screen. 
-![](responsive/css.png)
+![](images/responsive.png)
 
 
 Constraints are a really cool feature we didn't have time to cover today! They help make your design responsive. Check out [this link](https://help.figma.com/hc/en-us/articles/360039957734-Apply-Constraints-to-define-how-layers-resize) for more information.
