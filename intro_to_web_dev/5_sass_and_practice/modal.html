@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Modal!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"> 
+</head>
+<body>
+  <style>
+    html {
+      box-sizing: border-box;
+      background: #222222;
+      font-family: 'Open Sans';
+      font-size: 14px;
+      font-weight: 200;
+      color: white;
+    }
+    
+    body {
+      margin: 5rem;
+    }
+
+    button {
+      margin: 5rem 0;
+      padding: 1rem 2rem;
+      background: #222222;
+      border: white 1px solid;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      font-size: 2rem;
+      font-family: 'Open sans';
+    }
+
+    button:hover {
+      border: #a7bea9 1px solid;
+      color: #222;
+      background: #a7bea9;
+      transition: 0.3s linear;
+    }
+
+    /* You'll need to add some styling here */
+    .modal-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    .modal-wrapper.open {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .modal {
+      background-color: white;
+      color: #222;
+      border-radius: 5px;
+      padding: 2rem;
+      width: 50vw;
+      min-width: 500px;
+      max-height: 800px;
+      z-index: 11;
+      position: relative;
+      cursor: default;
+
+      /* position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); */
+    }
+
+    .modal .x-button {
+      background: white;
+      color: #222;
+      border: none;
+      position: absolute;
+      margin: 0.5rem;
+      top: 0;
+      right: 0;
+    }
+
+    .modal .x-button:hover {
+      color: #a7bea9;
+      transition: none;
+    }
+
+  </style>
+
+  <h1>How to make modal!</h1>
+  <h4>Modals are very useful, and you'll probably make a modal at some point...</h4>
+  <hr>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Blandit massa enim nec dui nunc mattis enim. Lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant. Consequat interdum varius sit amet mattis vulputate enim nulla. Adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna. Nam aliquam sem et tortor consequat id porta nibh venenatis. Mauris rhoncus aenean vel elit scelerisque. Euismod lacinia at quis risus sed vulputate odio ut enim. Dignissim enim sit amet venenatis urna cursus eget nunc scelerisque. Quisque egestas diam in arcu cursus. In ornare quam viverra orci. Tristique senectus et netus et malesuada fames ac. Condimentum lacinia quis vel eros donec ac odio tempor. Ac odio tempor orci dapibus ultrices in iaculis nunc sed. Lobortis feugiat vivamus at augue eget arcu. Egestas dui id ornare arcu odio ut sem nulla. Egestas integer eget aliquet nibh praesent tristique magna. Imperdiet massa tincidunt nunc pulvinar sapien.</p>
+
+  <p>Ac turpis egestas maecenas pharetra convallis. Nunc faucibus a pellentesque sit. Hendrerit gravida rutrum quisque non tellus. Ut venenatis tellus in metus vulputate eu scelerisque felis. Felis bibendum ut tristique et egestas quis. Ut tellus elementum sagittis vitae et leo duis. Amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor. Leo vel fringilla est ullamcorper. Sed arcu non odio euismod lacinia at quis risus sed. Sapien faucibus et molestie ac. Eget nunc lobortis mattis aliquam faucibus purus. Diam sit amet nisl suscipit adipiscing. Aenean pharetra magna ac placerat. Enim nulla aliquet porttitor lacus luctus accumsan tortor posuere ac. Convallis posuere morbi leo urna molestie at. Netus et malesuada fames ac turpis. Euismod elementum nisi quis eleifend quam adipiscing. Dictum at tempor commodo ullamcorper a. Eget duis at tellus at.</p>
+
+  <button id="click-button">Click me!</button>
+
+  <div class="modal-wrapper" id="modal1">
+    <!-- Start here! -->
+    <div class="modal">
+      <button class="x-button">x</button>
+      <h2>Hello! This is a modal!</h2>
+      <p>What's up? Hope you had a good day. :)</p>
+      <p>You can close the modal by clicking outside the box or clicking x</p>
+    </div>
+  </div>
+
+  <script>
+    // Add some code to make the modal pop up!
+    function closeModal(e) {
+      console.log(e)
+      // If the thing the user clicked is the modal-wrapper or the x button, close the modal-wrapper
+      // referred to by the DOM object that called it.
+      if (e.target.classList.contains('modal-wrapper') || e.target.classList.contains('x-button')) {
+        this.classList.remove('open');
+      }
+    }
+
+    // Assign the closeModal function to each of the modal wrapper
+    const modalWrappers = document.querySelectorAll('.modal-wrapper');
+    modalWrappers.forEach(modalWrapper => modalWrapper.addEventListener('click', closeModal));
+
+    // Open modal if click button is clicked
+    const clickButton = document.getElementById('click-button');
+    clickButton.addEventListener('click', () => {
+      const modalWrapper = document.getElementById('modal1');
+      modalWrapper.classList.add('open');
+    })
+  </script>
+
+</body>
+</html>
