@@ -12,7 +12,7 @@ In this session, we will go over
    - Git Actions
 
 ## Build Along
-Feel free to use Netlify to deploy your build along!
+(completely optional/for fun) Feel free to use Netlify to deploy your build along!
 
 ## [Attached Video is Here!](https://drive.google.com/file/d/1EIT2PqRpI878gzGJ2enGgrwMNbP3zJ2T/view?usp=sharing)
 
