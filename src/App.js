@@ -3,18 +3,18 @@ import { useEffect, useState } from 'react';
 import Task from './Task';
 
 /**
- * <input type="text">text input <> 
+ * <input type="text">text input <>
  * <button onClick={function}>[submit]<> onsubmit-> text => task & text resets
- * 
+ *
  * # of Tasks [button => remove]
  * Task ******
  * <text> what the task is
  * <button> remove the task
- * 
- * 
+ *
+ *
  * props -> C++ constuctor variables -> <Component>(props) + can't be modified by component itself
  * state -> member variables & it causes React rerenders -> dont modify state with setState
- * 
+ *
  * // attach CSS
  */
 /*
@@ -40,18 +40,17 @@ PRos for functional
 
 // useEffect
 
-
 function App() {
-  const [inputTask, setInputTask] = useState(""); // clears this
+  const [inputTask, setInputTask] = useState(''); // clears this
   const [taskList, setTaskList] = useState([]); // add task
   const addTask = () => {
     setTaskList([...taskList, inputTask]);
-    setInputTask("");
-  }
+    setInputTask('');
+  };
 
   useEffect(() => {
-    console.log("rendering!");
-    return () => {console.log("final cleanup")};
+    console.log('rendering!');
+    return () => {console.log('final cleanup');};
   });
 
   // forEach, map => returns the value that's been processed
@@ -62,7 +61,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <input type="text" onChange={(event) => { setInputTask(event.target.value) }} value={inputTask} />
+        <input type="text" onChange={(event) => { setInputTask(event.target.value); }} value={inputTask} />
         <button onClick={addTask} > Submit</button>
         {
           // taskList
@@ -75,7 +74,7 @@ function App() {
               index={index}
               taskList={taskList}
               setTaskList={setTaskList}>
-            </Task>
+            </Task>;
           })
         }
       </header>
