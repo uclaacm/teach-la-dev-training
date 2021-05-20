@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 export function useWindowDimensions() {
   //you can use state variables inside of custom hooks!
@@ -22,7 +22,9 @@ export function useWindowDimensions() {
       setWindowHeight(getWindowHeight());
     }
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resizeWidth", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   //

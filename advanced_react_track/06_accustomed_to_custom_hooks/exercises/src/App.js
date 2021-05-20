@@ -1,47 +1,56 @@
-import logo from "./logo.svg";
+import React from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import ContextPage from "./pages/ContextPage";
+import CustomHookPage from "./pages/CustomHookPage";
+import PropDrillingPage from "./pages/PropDrillingPage";
+
 import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <div className="content-container">
+          <nav>
+            <div>
+              <Link to="/custom">
+                <button className="button-container">Custom Hooks</button>
+              </Link>
+
+              <Link to="/context">
+                <button className="button-container">useContext</button>
+              </Link>
+              <Link to="/drilling">
+                <button className="button-container">Prop Drilling</button>
+              </Link>
+            </div>
+          </nav>
+
+          <Switch>
+            <Route exact path="/">
+              Click a page on the top to get started!
+            </Route>
+
+            <Route path="/custom">
+              <div className="subcomponent-container">
+                <CustomHookPage />
+              </div>
+            </Route>
+            <Route path="/context">
+              <div className="subcomponent-container">
+                <ContextPage />
+              </div>
+            </Route>
+            <Route path="/drilling">
+              <div className="subcomponent-container">
+                <PropDrillingPage />
+              </div>
+            </Route>
+          </Switch>
+        </div>
+      </div>
+    </Router>
   );
 }
 
 export default App;
-
-function motherFunction() {
-  console.log("This is a parent function that does its own stuff!");
-
-  console.log("It also calls the child function!");
-  childFunction();
-  console.log("It does more stuff afterwards too!");
-}
-
-function fatherFunction() {
-  console.log("This parent function also does its own stuff!");
-  console.log("It calls the child function too.");
-  childFunction();
-  console.log("This ones does its own stuff afterwards too!");
-}
-
-function childFunction() {
-  console.log("This is our child function!");
-}
-
-motherFunction();
-fatherFunction();

@@ -1,62 +1,73 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../App.css";
 export default function PropDrillingPage(props) {
-  const [buttonSum, setButtonSum] = useState(0);
   return (
     <div className="odd-component">
-      <div>Prop Drilling Example</div>
-      <div>
-        {`The button's counter is `} {buttonSum}
-      </div>
-      <IntermediateComponent1
-        buttonSum={buttonSum}
-        setButtonSum={setButtonSum}
-      />
+      <div>Window With Prop Drilling</div>
+      <IntermediateComponent1 />
     </div>
   );
 }
 
 function IntermediateComponent1(props) {
+  const [windowWidth, setWindowWidth] = useState(getWindowWidth());
+  const [windowHeight, setWindowHeight] = useState(getWindowHeight());
+
+  function getWindowWidth() {
+    const { innerWidth: width } = window;
+    return width;
+  }
+  function getWindowHeight() {
+    const { innerHeight: height } = window;
+    return height;
+  }
+
+  //you can use all the react hooks we've talked about before as well!
+  //setup event listener to update dimensions when they change
+  useEffect(() => {
+    function handleResize() {
+      setWindowWidth(getWindowWidth());
+      setWindowHeight(getWindowHeight());
+    }
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <div className="even-component">
       <div>
-        Here's a component that doesn't use its props, only passes it down to
-        its children!
-        <ChildComponentIncrementer
-          buttonSum={props.buttonSum}
-          setButtonSum={props.setButtonSum}
-        />
-        <ChildComponentDecrementer
-          buttonSum={props.buttonSum}
-          setButtonSum={props.setButtonSum}
+        Here's a parent component that is forced to update due to hoisted state
+        changes!
+        <SonComponent windowWidth={windowWidth} windowHeight={windowHeight} />
+        <DaughterComponent
+          windowWidth={windowWidth}
+          windowHeight={windowHeight}
         />
       </div>
     </div>
   );
 }
 
-function ChildComponentIncrementer(props) {
+function SonComponent(props) {
   return (
     <div className="odd-component">
-      <button
-        class="button-container"
-        onClick={() => props.setButtonSum((prevSum) => prevSum + 1)}
-      >
-        Increment Parent State!
-      </button>
+      <div>
+        Here's a child component! It does its own stuff, uses the custom hook
+      </div>
+      <div>The window's width is: {props.windowWidth}</div>
+      <div>The window's height is: {props.windowHeight}</div>
     </div>
   );
 }
 
-function ChildComponentDecrementer(props) {
+function DaughterComponent(props) {
   return (
     <div className="odd-component">
-      <button
-        class="button-container"
-        onClick={() => props.setButtonSum((prevSum) => prevSum - 1)}
-      >
-        Decrement Parent State!
-      </button>
+      <div>Here's another child component!</div>
+      <div>The window's width is: {props.windowWidth}</div>
+      <div>The window's height is: {props.windowHeight}</div>
+      <div>Wow it does its own stuff too</div>
     </div>
   );
 }

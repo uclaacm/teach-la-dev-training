@@ -1,46 +1,55 @@
-import React, { useState, useContext, createContext, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "../App.css";
 
-//Context Setup Outside of Component
-/*since we are passing down state logic inside of our context, 
-we initialize our context to an empty object!*/
-const ButtonContext = createContext({});
+const WindowContext = React.createContext({});
+function WindowProvider(props) {
+  const [windowWidth, setWindowWidth] = useState(getWindowWidth());
+  const [windowHeight, setWindowHeight] = useState(getWindowHeight());
 
-function ButtonProvider(props) {
-  //state variables to be passed down to component tree
-  const [buttonSum, setButtonSum] = useState(0);
+  function getWindowWidth() {
+    const { innerWidth: width } = window;
+    return width;
+  }
+  function getWindowHeight() {
+    const { innerHeight: height } = window;
+    return height;
+  }
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowWidth(getWindowWidth());
+      setWindowHeight(getWindowHeight());
+    }
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
-    <ButtonContext.Provider
-      //pass in an OBJECT if you want multiple items within the context!
+    <WindowContext.Provider
       value={{
-        buttonSum,
-        setButtonSum,
+        windowWidth,
+        windowHeight,
       }}
     >
-      {/* props.children acts as a wrapper component for Higher Order Components!*/}
       {props.children}
-    </ButtonContext.Provider>
-    //Now everything wrapped inside the provider has access to the context!
+    </WindowContext.Provider>
   );
 }
 
 export default function ContextPage() {
   return (
-    <ButtonProvider>
+    <WindowProvider>
       <ContextPageContent />
-    </ButtonProvider>
+    </WindowProvider>
   );
 }
 
 function ContextPageContent(props) {
-  const { buttonSum } = useContext(ButtonContext);
-
   return (
     <div className="odd-component">
-      <div>
-        <div>useContext Example</div>
-        {`The button's counter is `} {buttonSum}
-      </div>
+      <div>Window With Context</div>
       <IntermediateComponent1 />
     </div>
   );
@@ -50,43 +59,35 @@ function IntermediateComponent1(props) {
   return (
     <div className="even-component">
       <div>
-        Here's a component that doesn't use props, and doesn't reference the
-        context!
-        <ChildComponentIncrementer />
-        <ChildComponentDecrementer />
+        Here's a parent component that is forced to update due to context!
+        <SonComponent />
+        <DaughterComponent />
       </div>
     </div>
   );
 }
 
-function ChildComponentIncrementer(props) {
-  const { setButtonSum } = useContext(ButtonContext);
+function SonComponent(props) {
+  const { windowWidth, windowHeight } = useContext(WindowContext);
   return (
     <div className="odd-component">
-      <button
-        class="button-container"
-        onClick={() => setButtonSum((prevSum) => prevSum + 1)}
-      >
-        Increment Parent State!
-      </button>
+      <div>
+        Here's a child component! It does its own stuff, uses the custom hook
+      </div>
+      <div>The window's width is: {windowWidth}</div>
+      <div>The window's height is: {windowHeight}</div>
     </div>
   );
 }
 
-function ChildComponentDecrementer(props) {
-  const { setButtonSum } = useContext(ButtonContext);
+function DaughterComponent(props) {
+  const { windowWidth, windowHeight } = useContext(WindowContext);
   return (
     <div className="odd-component">
-      <button
-        class="button-container"
-        onClick={() => setButtonSum((prevSum) => prevSum - 1)}
-      >
-        Decrement Parent State!
-      </button>
+      <div>Here's another child component!</div>
+      <div>The window's width is: {windowWidth}</div>
+      <div>The window's height is: {windowHeight}</div>
+      <div>Wow it does its own stuff too</div>
     </div>
   );
-}
-
-function MyComponent() {
-  const [myState, setMyState] = useState("initial value");
 }
