@@ -1,0 +1,30 @@
+import React, { useState, useEffect } from "react";
+
+export function useWindowDimensions() {
+  //you can use state variables inside of custom hooks!
+  const [windowWidth, setWindowWidth] = useState(getWindowWidth());
+  const [windowHeight, setWindowHeight] = useState(getWindowHeight());
+
+  function getWindowWidth() {
+    const { innerWidth: width } = window;
+    return width;
+  }
+  function getWindowHeight() {
+    const { innerHeight: height } = window;
+    return height;
+  }
+
+  //you can use all the react hooks we've talked about before as well!
+  //setup event listener to update dimensions when they change
+  useEffect(() => {
+    function handleResize() {
+      setWindowWidth(getWindowWidth());
+      setWindowHeight(getWindowHeight());
+    }
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resizeWidth", handleResize);
+  }, []);
+
+  //
+  return [windowWidth, windowHeight];
+}

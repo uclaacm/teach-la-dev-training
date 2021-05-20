@@ -49,7 +49,7 @@ function App() {
 
             <Route path="/everything">
               <div className="subcomponent-container">
-                <EverythingPage />
+                <EverythingSolution />
               </div>
             </Route>
 
