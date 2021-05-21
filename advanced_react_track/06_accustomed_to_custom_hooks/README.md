@@ -2,12 +2,12 @@
 
 For the past couple of weeks, we've been discussing how a lot of the tools/practices that we use/follow when making React apps can help organize code and make it more readable:
 
--Compartmentalization of state logic
-
+- Compartmentalization of state logic
 - Hooks like `useReducer` and `useContext`
 - Functional Programming Paradigm
 - Higher Order Components
 - Separation of Concerns
+- 
   This week, we'll talk about how custom hooks embody all of these concepts and **why/how** we would use custom hooks to clean up our code!
 
 # How Do Hooked React Components Handle State Logic?
@@ -16,19 +16,29 @@ For the past couple of weeks, we've been discussing how a lot of the tools/pract
 
 One of the great things with React hooks is that we don't need to keep track of one giant `this.state`, but can instead keep track of each state variable discretely and independent of each other.
 
+## Hooked Functional Components
+
 ![Recap of Hooked Components](https://github.com/uclaacm/teach-la-dev-training-s21/blob/main/advanced_react_track/01_hooked_on_hooks/pictures/hooksLogic.png)
+
+## Class-Based Components
+
+![ewClasses](https://github.com/uclaacm/teach-la-dev-training-s21/blob/main/advanced_react_track/01_hooked_on_hooks/pictures/classLogic.png)
 
 # What Can We Do With Discrete Logic?
 
 With discrete logic, we can take advantage of "separation of concerns." One way we've looked at before that does this is by separating complex components into ones that only handle state logic and ones that only handle displaying content onto the screen.
 
-Hooks do the same thing, by combining logic that is discrete from other parts of the application and self-containing it to its own individual function.
+![separationConcerns](https://github.com/uclaacm/teach-la-dev-training-s21/blob/main/advanced_react_track/04_global_state_of_mind/pictures/bbuContext.png)
 
-**You're basically making your own APIs for your React Apps!**
+Hooks do the same thing, by **combining logic that is discrete from other parts of the application and self-containing it to its own individual function.**
 
-# How do Hooks Work?
+You're basically making your own APIs for use within your React Apps!
+
+# How do Custom Hooks Work?
 
 At their core, custom hooks work just like functional composition within the functional programming paradigm.
+
+![functionalParadigm](https://github.com/uclaacm/teach-la-dev-training-s21/blob/main/advanced_react_track/02_fun_with_functions/pictures/functionalOOP.png)
 
 ## Functional Composition
 
@@ -40,6 +50,8 @@ Hooks do the exact same thing! If two components share logic that can be encapsu
 
 Within custom hooks, you can use all the same tools we've discussed in the past like `useState`,
 `useEffect`, `useReducer`, and more! At their essence, custom hooks act the same as **higher-order components**, where you can inject more logic into a pre-existing component with your data!
+
+They are like React components, except inside their return statement, instead of containing JSX, you return data that React components can use!
 
 ![context-higher-order](https://github.com/uclaacm/teach-la-dev-training-s21/blob/main/advanced_react_track/04_global_state_of_mind/pictures/propDrilling.png)
 
@@ -114,7 +126,7 @@ Let's take a look and compare the performance of each of the three approaches: c
 
 ![contextProfiler](./pictures/contextProfiler.png)
 
-## Drilling Profiler
+## Prop Drilling Performance
 
 ![drillingProfiler](./pictures/drillingProfiler.png)
 
@@ -131,6 +143,8 @@ Inside Instagram, you can see a list of people you are following and their displ
 ![followers](./pictures/uidFollowState.png)
 
 However, inside a database, people are represented by UID's, and you have to match up the display name to the UIDs.
+
+![userDb](./pictures/userDb.png)
 
 If you want to be able to see the names of people you're following within the app but only contain it to the specific parts of the app where you have to display them, you can build your own custom hook that handles all of the logic.
 
@@ -149,4 +163,4 @@ In conclusion, custom hooks take advantage of all the concepts we've discussed s
 - Separation of Concerns with Higher Order Components
 - Centralization of State Logic
 
-Custom Hooks are a really powerful tool that help to clean up, organize, and optimize our code!
+Hooks are useful for repeated, compartmentalizable logic that is used multiple times throughout an application, or when you want to separate your logic into different functions. They are a really powerful tool that help to clean up, organize, and optimize our code!
