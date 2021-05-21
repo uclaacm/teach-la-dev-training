@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Modal!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"> 
+</head>
+<body>
+  <style>
+    html {
+      box-sizing: border-box;
+      background: #222222;
+      font-family: 'Open Sans';
+      font-size: 14px;
+      font-weight: 200;
+      color: white;
+    }
+    
+    body {
+      margin: 5rem;
+    }
+
+    button {
+      margin: 1rem 1rem 0;
+      padding: 0.2rem 0.5rem;
+      background: #222222;
+      border: white 1px solid;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      font-size: 1rem;
+      font-family: 'Open sans';
+    }
+
+    button:hover {
+      border: #a7bea9 1px solid;
+      color: #222;
+      background: #a7bea9;
+      transition: 0.3s linear;
+    }
+
+    .modal-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    .modal-wrapper.open {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .modal {
+      background-color: white;
+      color: #222;
+      border-radius: 5px;
+      padding: 2rem;
+      width: 50vw;
+      min-width: 500px;
+      max-height: 800px;
+      z-index: 11;
+      position: relative;
+      cursor: default;
+
+      /* position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); */
+    }
+
+    .modal .x-button {
+      background: white;
+      color: #222;
+      border: none;
+      position: absolute;
+      margin: 0.5rem;
+      top: 0;
+      right: 0;
+    }
+
+    .modal .x-button:hover {
+      color: #a7bea9;
+      transition: none;
+    }
+
+    .search-wrapper {
+      margin: 5vh 0;
+      position: relative;
+    }
+
+    .search-wrapper .search {
+      background: white;
+      border: white 1px solid;
+      border-radius: 2px;
+      font-size: 1rem;
+      padding: 0.2rem 0.5rem;
+      letter-spacing: 0.1rem;
+      margin: 1rem 0 0;
+      font-family: 'Open Sans';
+      width: 30vw;
+    } 
+
+    .search-wrapper .search-dropdown {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      height: 15vh;
+      overflow: auto;
+      overflow-x: hidden;
+      width: max-content;
+    }
+
+    .search-wrapper .search-dropdown li {
+      margin: 0;
+      background: #c2c2c2;
+      color: #222;
+      padding: 0.2rem 0.5rem;
+      letter-spacing: 0.1rem;
+      width: 30vw;
+      font-size: 1rem;
+      border: #c2c2c2 1px solid;
+    }
+
+    .search-wrapper .search-bar {
+      display: flex;
+      align-items: flex-end;
+    }
+
+  </style>
+
+  <h1>How to make modal!</h1>
+  <h4>Modals are very useful, and you'll probably make a modal at some point...</h4>
+  <hr>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Blandit massa enim nec dui nunc mattis enim. Lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant. Consequat interdum varius sit amet mattis vulputate enim nulla. Adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna. Nam aliquam sem et tortor consequat id porta nibh venenatis. Mauris rhoncus aenean vel elit scelerisque. Euismod lacinia at quis risus sed vulputate odio ut enim. Dignissim enim sit amet venenatis urna cursus eget nunc scelerisque. Quisque egestas diam in arcu cursus. In ornare quam viverra orci. Tristique senectus et netus et malesuada fames ac. Condimentum lacinia quis vel eros donec ac odio tempor. Ac odio tempor orci dapibus ultrices in iaculis nunc sed. Lobortis feugiat vivamus at augue eget arcu. Egestas dui id ornare arcu odio ut sem nulla. Egestas integer eget aliquet nibh praesent tristique magna. Imperdiet massa tincidunt nunc pulvinar sapien.</p>
+
+  <p>Ac turpis egestas maecenas pharetra convallis. Nunc faucibus a pellentesque sit. Hendrerit gravida rutrum quisque non tellus. Ut venenatis tellus in metus vulputate eu scelerisque felis. Felis bibendum ut tristique et egestas quis. Ut tellus elementum sagittis vitae et leo duis. Amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor. Leo vel fringilla est ullamcorper. Sed arcu non odio euismod lacinia at quis risus sed. Sapien faucibus et molestie ac. Eget nunc lobortis mattis aliquam faucibus purus. Diam sit amet nisl suscipit adipiscing. Aenean pharetra magna ac placerat. Enim nulla aliquet porttitor lacus luctus accumsan tortor posuere ac. Convallis posuere morbi leo urna molestie at. Netus et malesuada fames ac turpis. Euismod elementum nisi quis eleifend quam adipiscing. Dictum at tempor commodo ullamcorper a. Eget duis at tellus at.</p>
+
+  <div class="modal-wrapper" id="modal1">
+    <div class="modal">
+      <button class="x-button">x</button>
+      <h2 class="header">...</h2>
+      <p class="description"></p>
+    </div>
+  </div>
+
+  <div class="search-wrapper">
+    <p>Search for a building!</p>
+      <div class="search-bar">
+        <input type="text" class="search" placeholder="eg) Powell...">
+        <button id="go-button">Go!</button>
+      </div>
+      <ul class="search-dropdown">
+        <!-- <li>Marion Anderson Hall</li> -->
+      </ul>
+  </div>
+
+  <script>
+    const buildings = ["700 westwood plaza", "marion anderson hall", "ackerman student union", "biomedical sciences research building", "brain mapping center", "boelter hall", "botany building", "boyer hall", "bradley hall", "brain research institute", "broad art center", "bunche hall", "campbell hall", "carnesale commons", "william andrews clark memorial library", "california nanosystems institute", "collins center for executive education", "cornell hall", "covel commons", "canyon point", "de neve plaza commons building", "dentistry, school of", "dodd hall", "dykstra hall", "engineering iv", "engineering v", "engineering vi", "entrepreneurs hall", "factor health sciences building", "fernald center", "field", "fowler museum at ucla", "franz hall", "geffen hall", "geology building", "gold hall", "gonda (goldschmied) neuroscience and genetics research center", "graduate school of education and information studies building", "haines hall", "hedrick hall", "hershey hall", "center for the health sciences", "kaplan hall (formerly humanities building)", "kaufman hall", "kerckhoff hall", "kinsey science teaching pavilion", "knudsen hall", "korn convocation hall", "lab school 1", "la kretz hall", "law building", "la kretz garden pavillion", "life sciences", "lu valle commons", "macdonald medical research laboratories", "macgowan hall", "macgowan hall east", "marion davies children's center", "melnitz hall", "molecular sciences building", "moore hall", "morton medical building", "medical plaza 100", "medical plaza 300", "mathematical sciences", "murphy hall (administration)", "neuroscience research building", "northwest campus auditorium", "orthopedic hospital research center", "ostin music center", "physics and astronomy building", "perloff hall", "portola plaza building", "powell library building", "public affairs building (formerly public policy bldg)", "public health, school of", "ueberroth building", "reed neurological research center", "rieber hall", "eugene and maxine rosenfeld library", "rolfe hall", "royce hall", "student activities center", "sculpture garden", "semel institute for neuroscience and human behavior (formerly npi&h)", "slichter hall", "schoenberg music building", "sproul hall", "terasaki life sciences building", "ucla lab school, seeds campus", "wasserman building", "young hall", "wooden recreation and sports center", "young research library"];
+    const msg = {
+      "700 westwood plaza": "Where is this??",
+      "marion anderson hall": "I've never been here"
+    }
+
+    function closeModal(e) {
+      console.log(e)
+      // If the thing the user clicked is the modal-wrapper or the x button, close the modal-wrapper
+      // referred to by the DOM object that called it.
+      if (e.target.classList.contains('modal-wrapper') || e.target.classList.contains('x-button')) {
+        this.classList.remove('open');
+      }
+    }
+
+    function capitalize (s) {
+      return s.trim().toLowerCase().split(' ').map(word => word[0].toUpperCase() + word.substring(1)).join(' ');
+    }
+
+    function submit() {
+      const input = document.querySelector('.search');
+      // console.log(input.value);
+      var value = input.value.trim().toLowerCase();
+
+      const modalHeader = document.querySelector('#modal1 .header');
+      const modalDescription = document.querySelector('#modal1 .description');
+
+      if (value === "") {
+        modalHeader.textContent = "Please input something";
+        modalDescription.textContent = '';
+      } else if (buildings.includes(value)) {
+        modalHeader.textContent = capitalize(value);
+        // check if the building has a match in the personalized msg dictionary
+        if (value in msg) {
+          modalDescription.textContent = msg[value];
+        }
+        else {
+          // give a default message
+          modalDescription.textContent = "It's very nice";
+        }
+      } else {
+        modalHeader.textContent = "I don't know this building.";
+        modalDescription.textContent = '';
+      }
+
+      const modalWrapper = document.getElementById('modal1');
+      modalWrapper.classList.add('open');
+    }
+
+    // Assign the closeModal function to each of the modal wrapper
+    const modalWrappers = document.querySelectorAll('.modal-wrapper');
+    modalWrappers.forEach(modalWrapper => modalWrapper.addEventListener('click', closeModal));
+
+    // Open modal if click button is clicked
+    const clickButton = document.getElementById('go-button');
+    clickButton.addEventListener('click', submit);
+
+    // Update dropdown once finish pressing key
+    const input = document.querySelector('.search');
+    input.addEventListener('keyup', (e) => {
+      if (e.key === "Enter") {
+        // open modal if enter is pressed
+        submit();
+      } else {
+        const dropdown = document.querySelector('.search-wrapper .search-dropdown');
+        // remove all buildings currently in the dropdown
+        while (dropdown.firstChild) {
+          dropdown.removeChild(dropdown.firstChild);
+        }
+        if (e.target.value !== "") {
+          // get the buildings that have the input value has a substring
+          const suggestions = buildings.filter(building => building.includes(e.target.value));
+          // console.log(suggestions)
+          suggestions.forEach(building => {
+            // add building to the dropdown as list item element
+            const newItem = document.createElement('li');
+            newItem.textContent = capitalize(building);
+            dropdown.appendChild(newItem);
+          })
+        }
+      }
+    })
+
+
+  </script>
+
+</body>
+</html>
