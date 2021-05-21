@@ -1,5 +1,6 @@
 # Intro to Backend
 
+* [Link to the video of the talk this time](https://drive.google.com/file/d/1QO0_ryFCShSmLPvsgcC7RGgmOXbxZIxo/view?usp=sharing)
 * [Link to video of the last talk I gave](https://www.youtube.com/watch?v=kwy4U0980Eg)
 * [Some slides to accompany](https://docs.google.com/presentation/d/1kvo8d2qLvx4pVm7T6aNCNGPPsBWgTQjZIiLRT6wPgOk/edit?usp=sharing)
 
