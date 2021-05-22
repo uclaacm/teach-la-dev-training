@@ -1,6 +1,6 @@
 # Advanced React Track
 
-A look into how React has evolved over the years, going over significant changes in the React library, associated libraries, and Javascript from React's inception in 2013 to new experimental features still in the works today!
+A look into how new features in React, JavaScript and its associated libraries can help us write cleaner, more efficient, and more maintainable code!
 
 ## Prerequisites
 
@@ -12,13 +12,15 @@ A look into how React has evolved over the years, going over significant changes
 
 ## [Session 1: Getting "Hooked" on React Hooks](https://github.com/uclaacm/teach-la-dev-training-s21/tree/main/advanced_react_track/01_hooked_on_hooks)
 
-**Topics Covered:** 
+**Topics Covered:**
+
 - Switching From Class-Based Components to Hooked Functional Ones
 - The `useState` and `useEffect` hooks
 
 ## [Session 2: Fun With Functional Programming](https://github.com/uclaacm/teach-la-dev-training-s21/tree/main/advanced_react_track/02_fun_with_functions)
 
 **Topics Covered:**
+
 - Functional Vs Object Oriented Programming Paradigms
 - Imperative Vs Declarative Programming Paradigms
 - Declarative Array Manipulation: Mapping, Reducing, Filtering, Sorting
@@ -26,15 +28,33 @@ A look into how React has evolved over the years, going over significant changes
 ## [Session 3: Nested State of Mind](https://github.com/uclaacm/teach-la-dev-training-s21/tree/main/advanced_react_track/03_nested_state_of_mind)
 
 **Topics Covered:**
-- Handling state logic for nested data (objects, arrays) 
+
+- Handling state logic for nested data (objects, arrays)
 - The `useReducer` hook
 - Centralized state management for complex data
 
 ## [Session 4: Global State of Mind](https://github.com/uclaacm/teach-la-dev-training-s21/tree/main/advanced_react_track/04_global_state_of_mind)
 
 **Topics Covered:**
+
 - Prop Drilling Vs React Context for global state management
 - The `useContext` hook
+
+## [Session 5: Design Drama](https://github.com/uclaacm/teach-la-dev-training-s21/tree/main/advanced_react_track/05_design_drama)
+
+**Topics Covered:**
+
+- Style Guides
+- Prototyping
+- Responsive Design
+
+## [Session 6: Accustomed To Custom Hooks](https://github.com/uclaacm/teach-la-dev-training-s21/tree/main/advanced_react_track/06_accustomed_to_custom_hooks)
+
+**Topics Covered:**
+
+- Custom Hooks (how to use them, why we would use them)
+- Profiling React App Performance with React Dev Tools
+
 # Getting started!
 
 Since all of us are currently on projects right now, it's good to get into the practice of looking at existing code-bases and adding in features/improvements as necessary!
