@@ -7,8 +7,8 @@ For the past couple of weeks, we've been discussing how a lot of the tools/pract
 - Functional Programming Paradigm
 - Higher Order Components
 - Separation of Concerns
-- 
-  This week, we'll talk about how custom hooks embody all of these concepts and **why/how** we would use custom hooks to clean up our code!
+
+This week, we'll talk about how custom hooks embody all of these concepts and **why/how** we would use custom hooks to clean up our code!
 
 # How Do Hooked React Components Handle State Logic?
 
