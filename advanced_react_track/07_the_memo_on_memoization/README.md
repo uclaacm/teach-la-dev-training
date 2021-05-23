@@ -50,7 +50,7 @@ For instance, looking back at our representation of the code, we can see that th
 
 ![simplifiedCode](./pictures/bbuDefaultSimplified.png)
 
-However, when we take a look at our code with React Dev Tools, we see that the rest of the content has to get re-rendered **multiple** times. Why is that? We'll go through the steps you can take to figure out how to prevent unnecessary rerenders!
+However, when we take a look at our code with React Dev Tools, we see that the rest of the content has to get re-rendered **multiple** times. This is due to the fact that the custom hook comes with `useState` and `useEffect` logic under the hood, causing the entire component to re-render when state changes. We'll go through the steps you can take to figure out how to prevent unnecessary rerenders!
 
 ![gifExample](./pictures/bbuPageOpen.gif)
 
@@ -87,7 +87,7 @@ Instead of conditionally rendering the progress bar and handling whether or not 
 
 While this seems like a really small change, it ends up actually making a big difference in terms of performance! If we take a look at the React Profiler, we see that the rest of the content on the page doesn't have to re-render whenever the window's dimensions are changed, only the progress bar has to change!
 
-![restructureProfile](./pictures/codeRestructureProfiling)
+![restructureProfile](./pictures/codeRestructureProfiling.png)
 
 **However...** the main reason that we were able to improve performance in the above example is because only one of the children component within the parent component relied on stateful logic. If we assume for a moment that we would **only** be able to use the `useWindowDimensions` custom hook inside of our top-level component or multiple components within the tree relied on that logic, then we would not have the liberty of optimization through code restructuring.
 
@@ -123,7 +123,7 @@ If you only store primitive data types like numbers, strings, booleans, etc insi
 
 ![ReactMemoExample](./pictures/exampleMemo.png)
 
-As we can see, React.memo works to prevent unnecessary re-renders if we control when props change. Let's take another look back at our Bias By Us example to see how we can use memoization to improve performance as opposed to code restructuring!
+As we can see, React.memo works to prevent unnecessary re-renders if we control when props change. Let's take another look at our example to see how we can use memoization to improve performance as opposed to code restructuring!
 
 ## Improving Code Performance Through Memoization
 
@@ -151,15 +151,15 @@ With this small change of memoization, we're able to prevent re-renders to `TheR
 
 And since the only thing that re-renders every time the windowWidth changes is our Higher Order parent component, we can see that we're able to reduce the render time for the wrapper component from as much as 1.3ms to as little as 0.1ms everytime, which gives us **7-10x better** performance on average!
 
-**The Memoized Parent's Constant Re-Render Stats**
+## The Memoized Parent's Constant Re-Render Stats
 
 ![memoizedParent](./pictures/memoizedParentProfiler.png)
 
-**Vs. The Original Re-Render Stats**
+## Vs. The Original Re-Render Stats
 
 (With the original, re-renders without progress bar took about .5 ms while re-renders with progress bar took about 1.2-1.5 ms)
 
-![originalRenders](./bbuContentRaw.png)
+![originalRenders](./pictures/bbuContentRaw.png)
 
 This seems great for our use cases, but why is code restructuring preferred to memoization?
 

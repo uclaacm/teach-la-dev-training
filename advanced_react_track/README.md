@@ -55,6 +55,13 @@ A look into how new features in React, JavaScript and its associated libraries c
 - Custom Hooks (how to use them, why we would use them)
 - Profiling React App Performance with React Dev Tools
 
+## [Session 7: The Memo on Memoization](https://github.com/uclaacm/teach-la-dev-training-s21/tree/main/advanced_react_track/07_the_memo_on_memoization)
+
+**Topics Covered:**
+
+- How to improve React App performance with code restruturing and memoization
+- The three tools of React memoization: `React.memo` for components, `useMemo` for function return values, and `useCallback` for functions themselves.
+
 # Getting started!
 
 Since all of us are currently on projects right now, it's good to get into the practice of looking at existing code-bases and adding in features/improvements as necessary!
