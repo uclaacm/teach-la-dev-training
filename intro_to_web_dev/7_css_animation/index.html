@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Animate ~</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"> 
+</head>
+<body>
+  <style>
+    html {
+      box-sizing: border-box;
+      font-family: 'Open Sans';
+      font-size: 14px;
+      font-weight: 200;
+      color: black;
+      background: white;
+    }
+    
+    body {
+      margin: 5rem;
+    }
+
+    #acm-masks path {
+      stroke-dasharray: 300;
+      stroke-dashoffset: 300;
+      animation: draw 2s 0.5s forwards linear;
+
+    }
+
+    @keyframes draw {
+      100% {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    .mask {
+      fill: none;
+      stroke: white;
+    }
+
+    #acm-char-C {
+      transform: translate(120%, 0);
+    }
+
+    #acm-char-M {
+      transform: translate(240%, 0);
+    }
+
+    #acm-mask-C path {
+      animation-delay: 1s;
+    }
+
+    #acm-mask-M path {
+      stroke-dasharray: 450;
+      stroke-dashoffset: 450;
+      animation-delay: 1s;
+    }
+
+    /* .box {
+      background: #134313;
+      width: 500px;
+      height: 200px;
+      transition: 1s ease-in-out;
+      position: fixed;
+      left: 50px;
+      animation: move 1s infinite linear;      
+    }
+
+    @keyframes move {
+      0% {
+        left: 50px;
+        transform: rotate(0deg);
+      }
+
+      50% {
+        left: 200px;
+        transform: rotate(180deg);
+      }
+
+      100% {
+        left: 500px;
+        transform: rotate(360deg);
+      }
+    } */
+/* 
+    .box:hover {
+      background: #eb8ed2;
+      left: 500px;
+    } */
+
+  </style>
+
+  <div class="box">
+  </div>
+
+  <div class="container">
+    <svg width="1000" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <title>ACM</title>
+      <defs>
+        <g id="acm-masks">
+          <mask id="acm-mask-A">
+            <path class="mask" id="mask-A" d="M51 22.5C39.5 7 24.5 4 14 14C8.99994 18.762 3.5 33.5 15.5 44.5C27.8184 55.7919 43.5 48 52.5 32M51 1.5V55.5" stroke="#50C509" stroke-width="16"/>
+          </mask>
+          <mask id="acm-mask-C">
+            <path class="mask" id="mask-C" d="M47.0001 20.5C41.5001 8.00002 23 1.5 11 19C5.99997 28.5 8.5 47 27.5001 49C36 48.5 42.5 46.5 47.0001 37" stroke="#50C509" stroke-width="16"/>
+          </mask>
+          <mask id="acm-mask-M">
+            <path class="mask" id="mask-M" d="M10.0001 2V56.5C9.3334 40.5 15.1165 8.41074 32 9.5C47.5 10.5 44.5 40.5 44.0001 56.5C44.0001 30 42.5426 8.97141 67 10.5C83 11.5 79 42 79 58.5" stroke="#50C509" stroke-width="18"/>
+          </mask>
+        </g>
+      </defs>
+      <g id="acm-chars">
+        <path mask="url(#acm-mask-A)" id="acm-char-A" fill-rule="evenodd" clip-rule="evenodd" d="M43.483 1.7677H58.849V55.526H43.483V51.4013C39.1414 54.4915 33.823 56.38 27.884 56.38C12.49 56.38 0.802002 43.959 0.802002 28.6374C0.802002 13.3155 12.49 0.894699 27.884 0.894699C33.836 0.894699 39.1496 2.87957 43.483 6.05004V1.7677ZM43.484 28.6372C43.484 36.4768 37.463 42.357 29.571 42.357C21.678 42.357 15.565 36.2144 15.565 28.6372C15.565 21.06 21.678 14.9175 29.571 14.9175C37.463 14.9175 43.484 20.7976 43.484 28.6372Z" fill="black"/>
+        <path mask="url(#acm-mask-C)" id="acm-char-C" fill-rule="evenodd" clip-rule="evenodd" d="M53.571 16.7547L39.502 23.2908C37.707 19.2477 33.922 15.9938 28.804 15.9938C21.527 15.9938 15.892 21.6567 15.892 28.6422C15.892 35.6278 21.527 41.2907 28.804 41.2907C34.039 41.2907 37.879 38.3597 39.621 34.1139L53.662 40.7347C49.349 49.998 40.093 56.385 28.554 56.385C13.018 56.385 0.812012 43.964 0.812012 28.6422C0.812012 13.3204 13.573 0.899506 28.554 0.899506C39.376 0.899506 49.039 7.3806 53.571 16.7547Z" fill="black"/>
+        <path mask="url(#acm-mask-M)" id="acm-char-M" fill-rule="evenodd" clip-rule="evenodd" d="M83.9133 21.3914C83.5709 10.7838 76.7983 0.899506 63.553 0.899506C54.0698 0.899506 49.0525 4.20193 45.7277 8.79731C42.3735 4.09287 36.936 0.899506 29.408 0.899506C23.2171 0.899506 18.6404 4.03662 15.638 7.81739V1.7571H0.272003V55.535H15.638L15.637 25.6577C15.637 20.536 19.905 16.1213 25.027 16.1213C30.149 16.1213 34.417 20.3733 34.417 25.0967L34.417 55.535H49.782L49.782 25.6577C49.782 20.536 54.05 16.1213 59.172 16.1213C64.294 16.1213 68.562 20.3733 68.562 25.0967L68.562 55.535H83.927V21.3903L83.9133 21.3914Z" fill="black"/>
+        
+      </g>
+      
+    </svg>
+  </div>
+
+  <script>
+
+  </script>
+
+</body>
+</html>
