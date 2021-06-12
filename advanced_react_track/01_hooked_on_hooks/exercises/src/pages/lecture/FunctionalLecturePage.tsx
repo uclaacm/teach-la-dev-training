@@ -1,7 +1,7 @@
 import React from "react";
 
 //Hooked way of thinking: WHAT logic do you want to handle?
-export default function FunctionalLecturePage(props) {
+export default function FunctionalLecturePage(): JSX.Element {
   return (
     <div>
       <div className="todo-container">

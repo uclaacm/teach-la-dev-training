@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@types/react-router-dom": "^5.1.7",
+    "react-scripts": "^4.0.3"
+  }
+}

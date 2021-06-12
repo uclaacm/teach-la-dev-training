@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
 
-export default function UseEffectSolution(props) {
+export default function UseEffectSolution(): JSX.Element {
   const [matchedNum, setMatchedNum] = useState(false);
-  const [usersNum, setUsersNum] = useState(undefined);
-  const [randomNum, setRandomNum] = useState(null);
+  const [usersNum, setUsersNum] = useState<number | undefined>(undefined);
+  const [randomNum, setRandomNum] = useState<number | null>(null);
 
   //Logic for choosing random number interval
   useEffect(() => {

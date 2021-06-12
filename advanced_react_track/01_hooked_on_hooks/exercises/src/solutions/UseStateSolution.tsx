@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../App.css";
 
-export default function UseStateSolution(props) {
+export default function UseStateSolution(): JSX.Element {
   //SOLUTION: Using a State Variable
   const [hypedPeople, setHypedPeople] = useState(0);
   return (
