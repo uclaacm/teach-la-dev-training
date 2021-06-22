@@ -8,7 +8,7 @@ import UseStateSolution from "./solutions/UseStateSolution";
 import UseEffectSolution from "./solutions/UseEffectSolution";
 import "./App.css";
 
-function App() {
+function App(): JSX.Element {
   return (
     <Router>
       <div className="App">
@@ -55,7 +55,7 @@ function App() {
 
             <Route path="/useEffect">
               <div className="subcomponent-container">
-                <UseEffectPage />
+                <UseEffectSolution />
               </div>
             </Route>
           </Switch>

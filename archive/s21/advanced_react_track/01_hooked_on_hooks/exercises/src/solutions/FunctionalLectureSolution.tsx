@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 //Hooked way of thinking: WHAT logic do you want to handle?
-export default function FunctionalLectureSolution(props) {
+export default function FunctionalLectureSolution(): JSX.Element {
   const [peopleVaccinated, setPeopleVaccinated] = useState(0);
   const [shouldGetVaccine, setShouldGetVaccine] = useState(false);
   const [vaccinesLeft, setVaccinesLeft] = useState(1000);

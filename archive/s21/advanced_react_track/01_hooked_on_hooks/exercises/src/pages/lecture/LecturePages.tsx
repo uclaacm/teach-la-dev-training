@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import FunctionalLecturePage from "./FunctionalLecturePage";
 import ClassLecturePage from "./ClassLecturePage";
 
-export default function LecturePages(props) {
-  const [renderedComponent, setRenderedComponent] = useState(null);
+export default function LecturePages(): JSX.Element {
+  const [renderedComponent, setRenderedComponent] = useState("");
 
   useEffect(() => {
     return () => {
-      setRenderedComponent(null);
+      setRenderedComponent("");
       console.log("unmounted!");
     };
   }, []);

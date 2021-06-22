@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
 
-export default function UseEffectPage(props) {
+export default function UseEffectPage(): JSX.Element {
   const [matchedNum, setMatchedNum] = useState(false);
-  const [randomNum, setRandomNum] = useState(null);
+  const [randomNum, setRandomNum] = useState<number | null>(null);
 
   //Logic for choosing random number interval
   useEffect(() => {

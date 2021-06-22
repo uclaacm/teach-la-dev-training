@@ -52,7 +52,25 @@ The existence of closures make it so that the scope of inner functions include v
 
 The useState hook returns an array of 2 elements (a state variable and a function to modify the state variable), which we can use to access that instance of state. The value you put inside useState is the state's initial value, similar to the values you assign this.state for class-based components.
 
-![](./pictures/useState.png)
+```ts
+  import React, { useState } from "react";
+  
+  function Example() : JSX.Element {
+    function Example() {
+    //Declare a new state variable, which we'll call "count"
+    
+    /*on the left side of assignment operator, use array destructuring to grab
+    a state variable and a function to modify the state variable.*/
+    //on the right side of the assignment operator, put useState() and your initial variable!
+    const [count, setCount] = useState(0);
+    
+    /*NOTE: If you want useState() to accept multiple types in typescript, you can simply 
+    allow multiple types by using the typed interface function call of useState.*/
+    
+    cosnt [numOrString, setNumOrString] = useState<number | string>("initial value");
+    
+  }
+```
 
 ### NOTE:
 
@@ -68,7 +86,18 @@ Instead of worrying about the component lifecycle, useEffect just has you worry 
 - If you do not list a dependency array, the effect will run everytime your component updates.
 - If you pass in an empty array as the dependency array, the effect will only run when the component first mounts, similarly to componentDidMount.
 
-![](./pictures/useEffect.png)
+```ts
+  useEffect( () => {
+    //Function that runs whenever something inside the dependency array changes
+    console.log("My effect is doing something!")
+    
+    //Optional return function that runs any cleanup as necessary (clearing an interval for example)
+    return () => {
+      console.log("Component is unmounting!")
+    }
+  }, [/* optional dependency array*/])
+```
+
 
 Instead of having a separate componentWillUnmount method, you can handle all the clean up of your useEffect by returning a callback function at the end of the function you passed in as the first argument.
 

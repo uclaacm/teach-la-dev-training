@@ -1,7 +1,7 @@
 import React from "react";
 import "../App.css";
 
-export default function UseStatePage(props) {
+export default function UseStatePage(): JSX.Element {
   //How should we handle state?
   return (
     <div>
@@ -12,13 +12,13 @@ export default function UseStatePage(props) {
         TODO: Make the left button increment the people hyped by 5, make the
         right button reset it back to zero!
         <p>
-          (Also sign up for Day of Code and follow our new{" "}
+          (Also follow our new{" "}
           <a
             href="https://www.instagram.com/acm.teachla/?hl=en"
             rel="noreferrer noopener"
             target="_blank"
           >
-            Instagram
+            Instagram Account!
           </a>
           )
         </p>

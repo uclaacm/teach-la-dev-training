@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
 
-export default function UseEffectSolution(props) {
+export default function UseEffectSolution(): JSX.Element {
   const [matchedNum, setMatchedNum] = useState(false);
-  const [usersNum, setUsersNum] = useState(undefined);
-  const [randomNum, setRandomNum] = useState(null);
+  //must be different types because we want to test for equality!
+  const [usersNum, setUsersNum] = useState<number | undefined>(undefined);
+  const [randomNum, setRandomNum] = useState<number | null>(null);
 
   //Logic for choosing random number interval
   useEffect(() => {
@@ -22,6 +23,7 @@ export default function UseEffectSolution(props) {
   useEffect(() => {
     if (randomNum === usersNum) setMatchedNum(true);
   }, [randomNum, usersNum]);
+  
   return (
     <div>
       <div>Random num from 1 to 5 is: {randomNum}</div>
