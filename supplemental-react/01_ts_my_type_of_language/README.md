@@ -244,6 +244,8 @@ console.log(divideTwoNums("tree","chocolate"));
 
 ### Interfaces
 
+Do you remember our [`callPet` function](#refactoring-struggles) from earlier?
+
 More than just simple typing of functions with primitives, TypeScript offers us a way to describe the **shape** of parameters and return values by providing an abstraction of the parameters we pass in!
 
 Let's take a look at our `callPet` function in JavaScript again,
