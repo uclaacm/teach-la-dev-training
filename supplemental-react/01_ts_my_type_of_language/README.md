@@ -300,9 +300,9 @@ Enums are a way to define named constants, and are especially useful in React co
 ```tsx
 enum Direction {
     Up = 1,
-    Down = 2,
-    Left = 3,
-    Right =4
+    Down,
+    Left, 
+    Right
 }
 function ParentComponent(){
     return(
