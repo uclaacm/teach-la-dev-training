@@ -10,7 +10,8 @@ Welcome welcome :) we are super excited for you to be here! In this first sessio
 ## Review of Git
 [Git-it](https://github.com/jlord/git-it-electron ) is a super easy to use desktop app that helps you learn git if you need more resources!
 - git init
-- git clone <url>
+- git clone <url> alksfasjdfk;sajdf;ljfdsjkjask;asf;kfads
+// 
 - git branch <branch-name>
 - git checkout <branch-name>
 - git pull <origin-name>
