@@ -1,14 +1,17 @@
 # Intro to React
 Welcome welcome :) we are super excited for you to be here! In this first session, we will be going over:
-- Review of Git (as needed)
-- Intro to Node
-- Intro to NPM/NPX
-- Intro to React
-  - Create React Project
-  - JSX Intro
+- [Review of Git (as needed)](#Review-of-Git)
+- [Intro to the Workspace](#Intro-to-the-Workspace)
+  - [Intro to Node](#Intro-to-Node)
+  - [Intro to Yarn/NPM](#what-are-npm-and-yarn)
+  - [Intro to NPX](#what-is-npx-how-is-that-different-from-yarnnpm)
+- [what is Typescript](#why-are-we-using-typescript)
+- [Intro to React](#so-what-is-react-why-is-it-so-popular)
+  - [Create React Project](#create-react-app)
+  - [TSX Intro](#html-in-ts-tsx)
 
 ## Review of Git
-[Git-it](https://github.com/jlord/git-it-electron ) is a super easy to use desktop app that helps you learn git if you need more resources!
+[Git-it](https://github.com/jlord/git-it-electron) is a super easy to use desktop app that helps you learn git if you need more resources!
 - git init
 - git clone <url>
 - git branch <branch-name>
@@ -20,14 +23,25 @@ Welcome welcome :) we are super excited for you to be here! In this first sessio
 - git commit -m <message>
 - git push
 
-## Node Intro
-### What are Node and NPM and Yarn?
-
+## Intro to the Workspace
+### Intro to Node
 Nodejs is a runtime that brings JavaScript code out of the browser and into your hardware. This enables a wealth of possibilities, as JavaScript code suddenly is enabled to interface with common I/O operations and user-level applications!
 
 So when you hear “application on Nodejs”, Nodejs isn’t a framework, it’s a runtime environment! Generally when you hear that people are saying it’s NodeJS, they also mean that the framework that they are using is Express! But you’ll learn what the difference is in the future :)
 
 There's a difference between runtime environment (like JRE, the java download) vs framework (it tells you how to use/where to use) vs library (you tell it what to use/where to use, sorta like Math in C++)
+
+### How do I use Node?
+
+Easy enough! Just open up a terminal on your computer and run the command `node`. If it is installed properly, you should be presented with a console:
+
+![running node in the terminal, presenting a less than character for the prompt](images/nodeConsole.PNG)
+
+Now, we can run any piece of JavaScript code that we might want to from within the terminal:
+
+![running arbitrary console.log calls, passing functions as arguments](images/runningNode.PNG)
+
+### What are NPM and Yarn?
 
 NPM stands for **Node Package Manager**. This is the tool used to manage package installation and dependency for Node applications. It has a registry of over 1.3 mil packages at its disposal.
 
@@ -35,7 +49,7 @@ Yarn is also another package manager. This is what we will use for teachla! The 
 
 ![yarn vs npm speed](images/yarn_vs_npm.png)
 
-### How do I install Node (and Yarn)?
+### How do I install Node (and NPM and Yarn)?
 
 You can install Node and NPM from a single installer that you can find at the [downloads page of nodejs.org](https://nodejs.org/en/download/). If you're on a *nix operating system, then things depend on your flavor's primary package manager. You can find installation guides for all kinds on the same page.
 
@@ -45,16 +59,6 @@ To install yarn, run
 ```
 npm install --global yarn
 ```
-
-### How do I use node?
-
-Easy enough! Just open up a terminal on your computer and run the command `node`. If it is installed properly, you should be presented with a console:
-
-![running node in the terminal, presenting a less than character for the prompt](images/nodeConsole.PNG)
-
-Now, we can run any piece of JavaScript code that we might want to from within the terminal:
-
-![running arbitrary console.log calls, passing functions as arguments](images/runningNode.PNG)
 
 ### How do I use Yarn?
 
@@ -103,6 +107,18 @@ So if you want to execute a package (without installing it on your computer) and
 EG, `create-react-app` is an utility to bootstrap a react project: if you use it with npx ( `npx create-react-app my-app --template typescript` ) you will have your my-app project in place.
 Compare this with npm where you would need to install create-react-app itself (which will need another passage: `yarn add create-react-app` and `create-react-app my-app --template typescript`)
 
+## Why are we using typescript?
+Typescript is a superset of JavaScript that has optional typing and compiles to plain JavaScript.
+
+![typescript is superset of javascript](images/typescript.jpg)
+
+Here are some benefits of typescript!
+- IDE assistance (like autofill)
+- Catch errors early
+- Faster development cycles
+
+We'll go over how to use typescript in future lessons.
+
 ## So what is React? Why is it so popular?
 
 React is **a library for building user interfaces. It is declarative, component-based, and "learn once, write anywhere"**. Here's what all those terms mean:
@@ -125,18 +141,6 @@ What this means is that if you are running something that handles a ridiculous a
 
 Of course, it always helps when your technology is built by Facebook and open-sourced, as well.
 
-## Why are we using typescript?
-Typescript is a superset of JavaScript that has optional typing and compiles to plain JavaScript.
-
-![typescript is superset of javascript](images/typescript.jpg)
-
-Here are some benefits of typescript!
-- IDE assistance (like autofill)
-- Catch errors early
-- Faster development cycles
-
-We'll go over how to use typescript in future lessons.
-
 ## `create-react-app`
 
 `create-react-app` is a tool made by Facebook that **bootstraps** (see: sets up) a package with handy scripts, all the dependencies you need, and a sample app for you to get started with! All we need to do to create our app is run:
@@ -146,6 +150,8 @@ npx create-react-app <folderName> --template typescript
 ```
 
 Once this runs, you'll create a new package with all the dependencies for a react app already installed, and a handful of scripts to run, test, and build your app at your disposal. More specifically,
+* We can install our dependencies with `yarn install`
+  * When you install, you'll see a `yarn.lock` file appear. This contains all the exact dependencies that we need. Don't forget to commit this to Github! (The npm equivalent is called `package-lock.json` and if you ever use npm, don't forget to commit it). You don't have to commit `node_modules` though, since it's just all the dependencies that you specified in the `yarn.lock` file and is downloaded to your computer.
 * We can serve the project locally with `yarn start`
 * We can build the project for production with `yarn build`
 * We can run any tests we have written with `yarn test`
@@ -261,12 +267,18 @@ If the value `greeting` is truthy, then it will be returned. Otherwise, 'hello' 
 
 We can include other files in our React components very easily through `import` statements, just like ES6 modules.
 
-Typically for a React component, this means that we style our JSX through a CSS file. In the case of our App component, this is `App.css`.
+Typically for a React component, this means that we style our TSX through a CSS file. In the case of our App component, this is `App.css`.
+
+### TSX Extension
+One thing that you'll notice is that the extension for `App.tsx` is `tsx`. This is because the file has Typescript Expression in it. If this file didn't have tsx, it would have an extension of `.ts` and if it were javascript, whether or not it had "Javascript Expression", or JSX, it would have an extension of `.js`.
+
+In today's lesson, we didn't actually go over anything outside of the javascript realm (besides the file extensions). As per before, all valid javascript is valid typescript, but no the other way around. In future sessions, we will go over some syntax that makes typescript so great, but which is not valid javascript.
 
 # Additional Resources
-## Node, NPM
+## Node, NPM, Yarn
 * [tutorialspoint's piece on "What is Node?"](https://www.tutorialspoint.com/nodejs/nodejs_introduction.htm)
 * [How to publish your own package to NPM](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry)
+* [NPM vs Yarn](https://www.whitesourcesoftware.com/free-developer-tools/blog/npm-vs-yarn-which-should-you-choose/)
 
 ## React
 * [React's official guide to getting started](https://reactjs.org/docs/getting-started.html)
