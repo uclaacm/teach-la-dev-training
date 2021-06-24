@@ -3,12 +3,12 @@ Welcome welcome :) we are super excited for you to be here! In this first sessio
 - [Review of Git (as needed)](#Review-of-Git)
 - [Intro to the Workspace](#Intro-to-the-Workspace)
   - [Intro to Node](#Intro-to-Node)
-  - [Intro to Yarn/NPM](#What-are-NPM-and-Yarn?)
-  - [Intro to NPX](#What-is-NPX?-How-is-that-different-from-Yarn/NPM?)
-- [what is Typescript](#Why-are-we-using-typescript?)
-- [Intro to React](#So-what-is-React?-Why-is-it-so-popular?)
-  - [Create React Project](#`create-react-app`)
-  - [TSX Intro](#HTML-in-TS:-TSX)
+  - [Intro to Yarn/NPM](#what-are-npm-and-yarn)
+  - [Intro to NPX](#what-is-npx-how-is-that-different-from-yarnnpm)
+- [what is Typescript](#why-are-we-using-typescript)
+- [Intro to React](#so-what-is-react-why-is-it-so-popular)
+  - [Create React Project](#create-react-app)
+  - [TSX Intro](#html-in-ts-tsx)
 
 ## Review of Git
 [Git-it](https://github.com/jlord/git-it-electron) is a super easy to use desktop app that helps you learn git if you need more resources!
@@ -31,6 +31,16 @@ So when you hear “application on Nodejs”, Nodejs isn’t a framework, it’s
 
 There's a difference between runtime environment (like JRE, the java download) vs framework (it tells you how to use/where to use) vs library (you tell it what to use/where to use, sorta like Math in C++)
 
+### How do I use Node?
+
+Easy enough! Just open up a terminal on your computer and run the command `node`. If it is installed properly, you should be presented with a console:
+
+![running node in the terminal, presenting a less than character for the prompt](images/nodeConsole.PNG)
+
+Now, we can run any piece of JavaScript code that we might want to from within the terminal:
+
+![running arbitrary console.log calls, passing functions as arguments](images/runningNode.PNG)
+
 ### What are NPM and Yarn?
 
 NPM stands for **Node Package Manager**. This is the tool used to manage package installation and dependency for Node applications. It has a registry of over 1.3 mil packages at its disposal.
@@ -49,16 +59,6 @@ To install yarn, run
 ```
 npm install --global yarn
 ```
-
-### How do I use Node?
-
-Easy enough! Just open up a terminal on your computer and run the command `node`. If it is installed properly, you should be presented with a console:
-
-![running node in the terminal, presenting a less than character for the prompt](images/nodeConsole.PNG)
-
-Now, we can run any piece of JavaScript code that we might want to from within the terminal:
-
-![running arbitrary console.log calls, passing functions as arguments](images/runningNode.PNG)
 
 ### How do I use Yarn?
 
