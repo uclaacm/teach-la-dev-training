@@ -1,17 +1,17 @@
 # Intro to React
 Welcome welcome :) we are super excited for you to be here! In this first session, we will be going over:
-- Review of Git (as needed)
-- Intro to the Workspace
-  - Intro to Node
-  - Intro to Yarn/NPM
-  - Intro to NPX
-- what is Typescript
-- Intro to React
-  - Create React Project
-  - TSX Intro
+- [Review of Git (as needed)](#Review-of-Git)
+- [Intro to the Workspace](#Intro-to-the-Workspace)
+  - [Intro to Node](#Intro-to-Node)
+  - [Intro to Yarn/NPM](#What-are-NPM-and-Yarn?)
+  - [Intro to NPX](#What-is-NPX?-How-is-that-different-from-Yarn/NPM?)
+- [what is Typescript](#Why-are-we-using-typescript?)
+- [Intro to React](#So-what-is-React?-Why-is-it-so-popular?)
+  - [Create React Project](#`create-react-app`)
+  - [TSX Intro](#HTML-in-TS:-TSX)
 
 ## Review of Git
-[Git-it](https://github.com/jlord/git-it-electron ) is a super easy to use desktop app that helps you learn git if you need more resources!
+[Git-it](https://github.com/jlord/git-it-electron) is a super easy to use desktop app that helps you learn git if you need more resources!
 - git init
 - git clone <url>
 - git branch <branch-name>
@@ -24,7 +24,7 @@ Welcome welcome :) we are super excited for you to be here! In this first sessio
 - git push
 
 ## Intro to the Workspace
-### Node Intro
+### Intro to Node
 Nodejs is a runtime that brings JavaScript code out of the browser and into your hardware. This enables a wealth of possibilities, as JavaScript code suddenly is enabled to interface with common I/O operations and user-level applications!
 
 So when you hear “application on Nodejs”, Nodejs isn’t a framework, it’s a runtime environment! Generally when you hear that people are saying it’s NodeJS, they also mean that the framework that they are using is Express! But you’ll learn what the difference is in the future :)
