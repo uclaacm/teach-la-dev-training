@@ -8,6 +8,7 @@ go into more depth on how to switch!
     * [Webpack](#webpack)
     * [Linting](#linting)
     * [Github Actions](#github-actions)
+    *[Husky](#husky)
     * [Yarn](#yarn)
         * [NPM To Yarn](#npm-to-yarn)
     * [TypeScript](#typescript)
@@ -38,6 +39,9 @@ We use [ESLint](https://eslint.org) and [stylelint](https://stylelint.io) to hel
 
 ### Github Actions
 We have set-up GitHub Actions to automatically test our builds to see if there's any issues and lint our code as well.
+
+### Husky
+Husky uses Git Hooks to automatically run our linters and testers when we push with github actions.
 
 ### Yarn
 
@@ -290,6 +294,19 @@ function callPet(pet : Pet) : string{
     return "Come here " + pet.name.first + "!"
 }
 ```
+
+We can also type our objects through our interfaces like so:
+
+```ts
+const newPet : Pet = {
+    name: {
+        first: "Rufus",
+        last: "the Third"
+    },
+    type: "dog"
+}
+```
+
 
 ## TypeScript In React
 You can also use TypeScript in React applications, but just make sure that if you use JSX elements anywhere that you label your files as `.tsx`!

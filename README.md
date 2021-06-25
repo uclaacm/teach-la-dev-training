@@ -6,6 +6,6 @@ This track will help you learn how to use Github reliably and make your own dyna
 
 # Supplemental React & JavaScript
 
-Building upon Pt. 1 of our React sessions, we'll focus on how some more concepts in React, JavaScript can help us write cleaner, more efficient, and more maintainable code!
+Building upon Pt. 1 of our React sessions, we'll focus on how some more concepts in React, JavaScript, and TypeScript can help us write cleaner, more efficient, and more maintainable code!
 
 

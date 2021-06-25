@@ -1,32 +1,46 @@
-//BEHAVIOR YOU DON'T WANT
-// function divideTwoNums(a,b){
-//     return a/b;
-// }
-
+//divide two nums
+function divideTwoNums(a,b){
+    return a/b;
+}
 // console.log(divideTwoNums(8,4));
 
-// console.log(divideTwoNums("tree","chocolate"));
+//console.log(divideTwoNums("apple","banana"));
 
-
-//TODO: show refactoring functions and interfacing with objects
-
-
-//CRASHING BEHAVIOR
-const myPet = "Rufus";
-
-const newPet = {
+//Call Your Pet
+let myPet = "Rufus";
+myPet = {
     name: {
         first: "Rufus",
-        last: "the Third"
+        last: "The Third"
     },
     type: "dog"
-};
+}
+
 
 function callPet(pet){
-    return "Come here "+ pet.name.first + "!";
+    return "Come here, " + pet;
 }
 
 console.log(callPet(myPet));
 
-//error!
-console.log(callPet(newPet));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
