@@ -96,7 +96,7 @@ To add a dependency to our package, we simply find the name of the package, say,
 
 #### Global installation
 
-You can also install packages to use natively in your own terminal with `yarn install -g <packagename>`, where `-g` means **global**. If you're on Linux, you will likely have to use `sudo yarn install -g`.
+You can also install packages to use natively in your own terminal with `rn global add create-react-app`. If you're on Linux, you will likely have to use `sudo rn global add create-react-app`.
 
 ### What is NPX? How is that different from Yarn/NPM?
 You'll likely see NPX often in your web dev times as well! Here is the main difference:
