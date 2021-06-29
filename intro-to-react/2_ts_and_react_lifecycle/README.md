@@ -8,16 +8,15 @@ In this second session, we will be going over:
   - Spread Operator Arrays and Maps
 - Typescript
   - Why Typescript
-- Functional Programming: Object.keys, map, forEach, reduce, find
-- Imports
-- Files
+- Functional Programming: forEach, map, reduce
 - Lists and Keys in React
 - States and Props
-   - Destructing Arrays and Maps
 - Class based React (for your reference)
    - onMount, onDismount
    - State
 - Why is Functional React Better
+
+[We also have a little tryout if you want to practice yourself!](#tryout)
 
 # TSX
 ## What did we learn last week?
@@ -246,47 +245,63 @@ const newPet : Pet = {
 }
 ```
 #### Types
-Even more confusing, sometimes you can define types, so you could do
-// TODO: ADD HERE
-
-
-## Object.keys, Object.entries, Object.values, map, forEach, reduce, find
-[Take a look here for definitions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+Even more confusing, sometimes you can define types, so you could do something like this
 ```
-Object.keys(cat_owners).reduce((prevVal, curKey) => {return prevVal +" "+ curKey + curKey}, "")
+type pets = Pet[];
 ```
-## Files and Imports
-Remember what node_modules is? 
-It’s the dependencies specified in the package.json file
-### Public folder
-Visible to the public by default
-### App.test.js
-Testing, hopefully I’ll have time for this later, but has to do with Continuous Integration and making sure things aren’t broken
-### ReactDOM Render
-Take a look at this https://reactjs.org/docs/rendering-elements.html 
+or
+```
+type Person = Man | Woman;
+```
+or
+```
+type Person = {
+  name: string,
+  age: number
+};
+```
+This last one is really similar to interfaces, but it's easier to "extend" off of interfaces.
 
-### .gitignore
-I’ll do a lil workshop or something, but as an overview, it’s files that git ignores by default when you git add .
-### Linting
-Making sure that everything conforms to a set of standards. EG all tabs are 2 spaces, all lines end with semicolon, etc (pull up playnet linter)
+#### When to use type vs interface
+Interfaces are better when you need to define a new object or method of an object. Types are better when you need to create functions. After some practice, you'll feel out which one is best for which use case.
 
-### Package-lock.json
-Babel is a JavaScript compiler Babel is a toolchain that is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript in current and older browsers or environments.
-### Lists and Keys 
+## Array -  `forEach`, `map`, `reduce`
+[Take a look here for more](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 ```
-          Object.entries(cat_owners).map(([key, value]) => 
-            <div>
-              {key} has {value.join(", ")} cats
-            </div>
-          )
+const cats = ["pickles", "oscar", "mittens", "meow meow"];
 ```
-Causes
+
+### `forEach`
+To iterate on each value, we can use `forEach`
+```
+cats.forEach((cat)=> console.log(cat + " says 'meow i want food' :("))
+```
+### `map`
+To iterate on each value, and return the results (in an array), we can use `map`
+```
+cats.map((cat)=> <>{cat} wants food >:0</>)
+```
+### `reduce`
+To accumulate on each value, then return the accumulated result, we can use `reudce`
+```
+cats.reduce((cat) => cat + " ")
+```
+### Other functional commands
+There are other things like `find`, `filter`, and others, but you can just try it out as need be! Generally those definitions above are more often used.
+## Using `map` in React
+```
+{cats.map((cat)=> <div style={{backgroundColor: "blue"}}>{cat} wants food :0</div>)}
+```
+## Lists and Keys 
+Doing the above causes
 `Warning: Each child in a list should have a unique "key" prop.`
 
 This means that every item, every `div` needs to have a key.
 This is because react renders this list by checking out whats different right, and it uses key to help determine whether to render a completely new object, or just modify it. 
-This will come up again later
-For more info, go here https://reactjs.org/docs/lists-and-keys.html#keys 
+If you want to learn more about how React reconcilitates things, take a look (here)[https://reactjs.org/docs/reconciliation.html]
+```
+{cats.map((cat)=> <div key={cat}>{cat} wants food :0</div>)}
+```
 # React
 ## Class Based
 This is getting phased out. I’m just showing yalls for reference!
@@ -344,18 +359,14 @@ function Cats(props) {
   return <div>{props.name}</div>;
 }
 function App() {
-  const cat_owners = {
-    "alli": 0,
-    "melme": 0, 
-    "gude": 0
-  }
+const cats = ["pickles", "oscar", "mittens", "meow meow"];
+
   const [number, setNumber] = useState(0);
   return (
     <div className="App">
       <header className="App-header">
         {
-          Object.entries(cat_owners).map(([key, _]) => 
-          <Cats name={key}/>)
+          cats.map((cat)=> <Cats name={cat}/>)
         }
         <button onClick={()=>setNumber(number+1)}/>
       </header>
@@ -363,6 +374,9 @@ function App() {
   );
 }
 ```
+## Props vs State
+Imagine Props as the constructor variables in C++, and the state as the member vairables! **You cannot modify state directly, you have to use `setState` in order to set the state.** This is because React only knows to rerender (the parts of) your component based on when which states have changed from `setState`.
+
 Let’s combine these topics so that every time you press a button, the number of cats you own increases!
 Let’s bring the button and number logic into the Cats function
 ```
@@ -377,17 +391,13 @@ function Cats(props) {
   </div>;
 }
 function App() {
-  const cat_owners = {
-    "alli": 3,
-    "melme": 0, 
-    "gude": 4
-  }
+  const cats = ["pickles", "oscar", "mittens", "meow meow"];
+
   return (
     <div className="App">
       <header className="App-header">
         {
-          Object.entries(cat_owners).map(([key, _]) => 
-          <Cats name={key}/>)
+          cats.map((cat) => <Cats name={cat}/>)
         }
       </header>
     </div>
@@ -410,17 +420,13 @@ function Cats(props) {
   </div>;
 }
 function App() {
-  const cat_owners = {
-    "alli": 3,
-    "melme": 0, 
-    "gude": 4
-  }
+  const cats = ["pickles", "oscar", "mittens", "meow meow"];
+
   return (
     <div className="App">
       <header className="App-header">
         {
-          Object.entries(cat_owners).map(([key, value]) => 
-          <Cats name={key} startingPoint={value}/>)
+          cats.map((cat) => <Cats name={cat} startingPoint={4}/>)
         }
       </header>
     </div>
@@ -448,17 +454,25 @@ function App() {
       - onMount, onDismount
 - States and Props
 - Why are functional components are better
-# <a name="tryout"></a>Intro mini project for this week
-## Make an array of foods which you can either duplicate with a new number or something at the end or like or delete
+
+# <a name="tryout"></a>Try this out yourself
+## Shopping List Tryout!
+Make an array of foods which you can either duplicate or delete from your list.
 - Specify 3 different foods
-- Number Likes
-- Button for the number of likes
-- Foods duplicate
-- Remove the foods
+- Add another food to your list
+- Remove the food from your list
 
-Challenge: add images corresponding to each food!
+Challenge: add images corresponding to each food! Hint: objects have the `map` function as well!
 
-Note, don’t worry about having a different number of likes for every duplicate! We can work on this in the future
+### Learning Goals
+- State
+- Props
+- Git
+- React keys
+- `create-react-app`
+- typescript/javascript
+  - `map` function
+- Basics of React Structure
 
 # Resources
 We *highly recommend* [React's own "Main Concepts" tutorial](https://reactjs.org/docs/hello-world.html).
@@ -469,6 +483,7 @@ React:
 * [State and Lifecycle (React)](https://reactjs.org/docs/state-and-lifecycle.html)
 * [Handling Events (React)](https://reactjs.org/docs/handling-events.html)
 * [Lists and Keys (React)](https://reactjs.org/docs/lists-and-keys.html)
+* [Reconcilitation (React)](https://reactjs.org/docs/reconciliation.html)
 * [Forms (React)](https://reactjs.org/docs/forms.html)
 * [Composition vs Inheritance (React)](https://reactjs.org/docs/composition-vs-inheritance.html)
 * [Thinking in React (React)](https://reactjs.org/docs/thinking-in-react.html)
@@ -476,6 +491,9 @@ React:
 * [JSX in Depth (React)](https://reactjs.org/docs/jsx-in-depth.html)
 * [Optimizing Performance (React)](https://reactjs.org/docs/optimizing-performance.html)
 * [Introducing Hooks](https://reactjs.org/docs/hooks-intro.html)
+
+Typescript
+* [Types vs Interfaces](https://blog.logrocket.com/types-vs-interfaces-in-typescript/)
 
 Javascript:
 
