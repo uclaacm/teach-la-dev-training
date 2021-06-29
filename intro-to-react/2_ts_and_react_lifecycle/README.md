@@ -136,13 +136,13 @@ function spreadOperatorDemo(array, object){
 
 [TypeScript](https://www.typescriptlang.org) is an open-source language built on top of JavaScript that addresses the issues of JavaScript being a dynamically typed language by adding **static type definitions.** (types that are determined at compile time)
 
-![tsVisual](./pictures/tsVisual.png)
+![tsVisual](./images/tsVisual.png)
 
 TypeScript is a **superset** of JavaScript which means that all JavaScript is valid TypeScript, but not all TypeScript is valid JavaScript.
 
 ### How Does TypeScript Work?
 
-![tsVisual](./pictures/tsVisual.png)
+![tsVisual](./images/tsVisual.png)
 
 #### [Compiled Vs Interpreted Languages](https://www.geeksforgeeks.org/difference-between-compiled-and-interpreted-language/)
 While JavaScript is an **interpreted language**, which means that it gets read by an interpreter like a web-browser instead of compiled into machine code, TypeScript is a **compiled language** which means that TypeScript gets converted to JavaScript when you compile it, which offers a vast number of benefits!
@@ -303,38 +303,8 @@ If you want to learn more about how React reconcilitates things, take a look (he
 {cats.map((cat)=> <div key={cat}>{cat} wants food :0</div>)}
 ```
 # React
-## Class Based
-This is getting phased out. I’m just showing yalls for reference!
-```
-class ComponentName extends React.Component {
-  render() {
-    return <div>HI I AM COMPONENT</div>;
-  }
-}
-```
-## State & Props
-See here for more https://reactjs.org/docs/state-and-lifecycle.html
-
-### How to add a state
-``` 
-class ComponentName extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {date: new Date()}
-  }
-  tick() {
-    this.setState({
-      date: new Date()
-    })
-  }
-  render() {
-    return <div>HI I AM COMPONENT {this.state.date.toLocaleTimeString()}</div>;
-  }
-}
-```
-`componentDidMount`, `componentWillUnmount` => things happen when the Component starts up and when it is deleted
-# Functional React
-## State 
+## Functional React
+### State 
 `useState` is basically the same as setting state
 Remember to break up state with `[name, setName]`
 Use `setName` to setup the new state so that React knows to rerender!
@@ -351,7 +321,7 @@ function App() {
   );
 }
 ```
-## Props
+### Props
 This is the original input passed into a function
 - Imagine this as the things you put into a constructor
 ```
@@ -374,7 +344,7 @@ const cats = ["pickles", "oscar", "mittens", "meow meow"];
   );
 }
 ```
-## Props vs State
+### Props vs State
 Imagine Props as the constructor variables in C++, and the state as the member vairables! **You cannot modify state directly, you have to use `setState` in order to set the state.** This is because React only knows to rerender (the parts of) your component based on when which states have changed from `setState`.
 
 Let’s combine these topics so that every time you press a button, the number of cats you own increases!
@@ -433,27 +403,41 @@ function App() {
   );
 }
 ```
+## Class Based
+This is getting phased out. I’m just showing yalls for reference!
+```
+class ComponentName extends React.Component {
+  render() {
+    return <div>HI I AM COMPONENT</div>;
+  }
+}
+```
+
+### State and Props
+See here for more details: https://reactjs.org/docs/state-and-lifecycle.html
+``` 
+class ComponentName extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {date: new Date()}
+  }
+  tick() {
+    this.setState({
+      date: new Date()
+    })
+  }
+  render() {
+    return <div>HI I AM COMPONENT {this.state.date.toLocaleTimeString()}</div>;
+  }
+}
+```
+`componentDidMount`, `componentWillUnmount` => things happen when the Component starts up and when it is deleted
 ## Why Functional
 - Lightweight
 - Easier to read
 - Nice hooks (like the `useState` stuff)
 - Performance boost
 - Basically barely any pros for Class based, so I’d recommend defaulting to functional
-# Summary
-- Functions
-- Arrow Functions
-- Objects
-- Arrays
-- Imports
-- Files
-- Object.keys, map, forEach, reduce, find
-- Lists and keys in React
-- Handle onClick
-- Destructing Arrays and Maps
-- Class based React (for your reference)
-      - onMount, onDismount
-- States and Props
-- Why are functional components are better
 
 # <a name="tryout"></a>Try this out yourself
 ## Shopping List Tryout!
@@ -464,7 +448,7 @@ Make an array of foods which you can either duplicate or delete from your list.
 
 Challenge: add images corresponding to each food! Hint: objects have the `map` function as well!
 
-### Learning Goals
+### Learning Goals of the Tryout!
 - State
 - Props
 - Git
