@@ -12,13 +12,13 @@ Today, we'll talk about some of React's internals with Single Page Applications,
     - [Styled Components](#styled-components)
 - [Emulating Multiple Pages In React](#emulating-multiple-pages-in-react)
 - [React Router DOM](#react-router-dom)
-    -[Routers](#routers)
-        -[Links](#links)
-        -[Switches](#switches)
-    -[Passing Data Through URLs](#passing-data-through-urls)
-        -[useParams Hook](#useparams-hook)
-        -[Render Prop](#render-prop)
-    -[Nested URL Parameters](#nested-url-parameters)
+    - [Routers](#routers)
+        - [Links](#links)
+        - [Switches](#switches)
+    - [Passing Data Through URLs](#passing-data-through-urls)
+        - [useParams Hook](#useparams-hook)
+        - [Render Prop](#render-prop)
+    - [Nested URL Parameters](#nested-url-parameters)
 - [Conclusion](#conclusion)
 
 ## Single Page Applications
@@ -61,7 +61,7 @@ ReactDOM.render(
 
 Even if we have a React Application with multiple pages, it's all self contained within a **single page**, and all our code gets combined into one giant webpage. This type of website is called a **Single Page Application**, and the main difference between this versus a Multi Page Application is that instead of fetching new pages whenever the user requests to move from one page to another, everything is contained within a **single** page. When requesting to view "another page", we simply load up one of the templates that the page can display instead!
 
-![SPAs](./pictures/spas.jpeg)
+![SPAs](./pictures/spas.jpg)
 
 React uses [webpack](https://webpack.js.org), a static module bundler for JavaScript applications which combines all of our css,js, tsx, and asset files all for our SPA. (Fun fact, all the webpack configuration gets set-up when we run `yarn create-react-app` for us!) It adds all of our styles into the header of a **single file** for production, but that might lead to some issues...
 
@@ -125,10 +125,14 @@ export default function SecondPage(): JSX.Element {
 }
 ```
 
+### [Styled Components](https://styled-components.com)
+
+Styled components offer a way to mitigate this by using **CSS-in-JS**, or you can also use [css-modules](https://github.com/css-modules/css-modules) to include multiple versions of the same className. I won't go in detail on them but you can read about them here!
+
 
 ### Emulating Multiple Pages In React
 
-Even though React Apps are single page applications, we can emulate the usage of multiple pages through routing libraries like [`react-router-dom`](https://reactrouter.com/web/guides/quick-start) or [`reach-router.`](https://reach.tech/router/). These two routing libraries are the most popular routing libraries for React applications. (In fact, they're actually combining together in the **very** near future and the merger has been in progress for the past two years!) Eventually, the best parts of each library will give us developers the best experience, but for today we will focus on the `react-router-dom` library!
+Even though React Apps are single page applications, we can emulate the usage of multiple pages through routing libraries like [`react-router-dom`](https://reactrouter.com/web/guides/quick-start) or [`reach-router`](https://reach.tech/router/). These two routing libraries are the most popular routing libraries for React applications. (In fact, they're actually combining together in the **very** near future and the merger has been in progress for the past two years!) Eventually, the best parts of each library will give us developers the best experience, but for today we will focus on the `react-router-dom` library!
 
 
 ## [React Router DOM](https://reactrouter.com/web/guides/quick-start)
