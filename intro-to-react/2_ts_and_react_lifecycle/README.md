@@ -39,10 +39,6 @@ Just put it in brackets
 
 TypeScript is a **superset** of JavaScript which means that all JavaScript is valid TypeScript, but not all TypeScript is valid JavaScript.
 
-### How Does TypeScript Work?
-
-![tsVisual](./images/tsVisual.png)
-
 # Javascript \<a subset of typescript!\>
 ## Functions
 Take a look at App and see how it is a function, Javascript functions are like that 
