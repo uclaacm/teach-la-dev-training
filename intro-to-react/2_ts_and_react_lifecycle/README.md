@@ -51,11 +51,11 @@ function meow() {
 ## Arrow Functions
 ```
 const meowArrow = () => {
- "meow meow meow";
+ return "meow meow meow";
 }
 ```
 ### Why Arrow Functions over Functions? <i>a little complex, feel free to skip</i>
-- Cleaner
+- Cleaner (shorthand as `const meowArrow = () => "meow meow meow";`)
 - Binding of `this`
 
 In classic function expressions, the this keyword is bound to different values based on the context in which it is called. With arrow functions however, this is lexically bound. It means that it uses `this` from the code that contains the arrow function.
