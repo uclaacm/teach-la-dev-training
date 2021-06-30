@@ -24,10 +24,21 @@ TSX, how it is embedded React hidden and abstracted away
 We can insert Javascript into JSX!
 Just put it in brackets
 ```
+  <div>
+    some HTML/CSS looking like things
         {
           // your javascript code
         }
+   </div>
 ```
+## What is TypeScript?
+
+[TypeScript](https://www.typescriptlang.org) is an open-source language built on top of JavaScript that addresses the issues of JavaScript being a dynamically typed language by adding **static type definitions.** (types that are determined at compile time)
+
+![tsVisual](./images/tsVisual.png)
+
+TypeScript is a **superset** of JavaScript which means that all JavaScript is valid TypeScript, but not all TypeScript is valid JavaScript.
+
 # Javascript \<a subset of typescript!\>
 ## Functions
 Take a look at App and see how it is a function, Javascript functions are like that 
@@ -39,17 +50,12 @@ function meow() {
 ```
 ## Arrow Functions
 ```
-const meowArrow = () => "meow meow meow";
-```
-### How to have more than one line of code?
-```
-const meowArrowBrackets = () => {
-  // can do other things here
-  return "meow meow meow";
+const meowArrow = () => {
+ return "meow meow meow";
 }
 ```
 ### Why Arrow Functions over Functions? <i>a little complex, feel free to skip</i>
-- Cleaner
+- Cleaner (shorthand as `const meowArrow = () => "meow meow meow";`)
 - Binding of `this`
 
 In classic function expressions, the this keyword is bound to different values based on the context in which it is called. With arrow functions however, this is lexically bound. It means that it uses `this` from the code that contains the arrow function.
@@ -78,6 +84,8 @@ var obj = {
 ```
  
 ES6 arrow functions can’t be bound to a this keyword, so it will lexically go up a scope, and use the value of this in the scope in which it was defined.
+
+### Rule of Thumb
  
 Honestly, it’s kind of confusing, as a rule of thumb, I’d mainly make arrow functions if it is inside of anything else, and normal functions if it’s standalone.
 
@@ -130,26 +138,6 @@ function spreadOperatorDemo(array, object){
   const newObject = {"blehhh": "meow", ...newKeyAndValue}
 }
 ```
-
-# Typescript
-## What is TypeScript?
-
-[TypeScript](https://www.typescriptlang.org) is an open-source language built on top of JavaScript that addresses the issues of JavaScript being a dynamically typed language by adding **static type definitions.** (types that are determined at compile time)
-
-![tsVisual](./images/tsVisual.png)
-
-TypeScript is a **superset** of JavaScript which means that all JavaScript is valid TypeScript, but not all TypeScript is valid JavaScript.
-
-### How Does TypeScript Work?
-
-![tsVisual](./images/tsVisual.png)
-
-#### [Compiled Vs Interpreted Languages](https://www.geeksforgeeks.org/difference-between-compiled-and-interpreted-language/)
-While JavaScript is an **interpreted language**, which means that it gets read by an interpreter like a web-browser instead of compiled into machine code, TypeScript is a **compiled language** which means that TypeScript gets converted to JavaScript when you compile it, which offers a vast number of benefits!
-
-* You can debug applications before they're being run, at compile-time.
-* Your IDE can auto-fill properties of objects (with ctrl/cmd space).
-* Compilation errors help reduce the chance of you making errors and help catch errors.
 
 ## Typescript Syntax
 ### Primitive Typing
