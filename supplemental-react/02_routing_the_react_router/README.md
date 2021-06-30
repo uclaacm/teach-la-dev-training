@@ -9,7 +9,7 @@ Today, we'll talk about some of React's internals with Single Page Applications,
     - [Key Features of HTML Page Navigation](#key-features-of-html-page-navigation)
 - [React Single Page Applications](#react-single-page-applications)
 - [Webpack and Common Pitfalls](#webpack-and-common-pitfalls)
-    - [Styled Components](#styled-components)
+    - [Styled Components And CSS Modules](#styled-components-and-css-modules)
 - [Emulating Multiple Pages In React](#emulating-multiple-pages-in-react)
 - [React Router DOM](#react-router-dom)
     - [Routers](#routers)
@@ -63,7 +63,7 @@ Even if we have a React Application with multiple pages, it's all self contained
 
 ![SPAs](./pictures/spas.jpg)
 
-React uses [webpack](https://webpack.js.org), a static module bundler for JavaScript applications which combines all of our css,js, tsx, and asset files all for our SPA. (Fun fact, all the webpack configuration gets set-up when we run `yarn create-react-app` for us!) It adds all of our styles into the header of a **single file** for production, but that might lead to some issues...
+React uses [webpack](https://webpack.js.org), a static module bundler for JavaScript applications which combines all of our css,js, tsx, and asset files all for our SPA. (Fun fact, all the webpack configuration gets set-up when we run `yarn create-react-app` (our template typescript starter has our own version of the setup instead of CRA :0 ) for us!) It adds all of our styles into the header of a **single file** for production, but that might lead to some issues...
 
 ### Webpack and Common Pitfalls
 
@@ -125,9 +125,9 @@ export default function SecondPage(): JSX.Element {
 }
 ```
 
-### [Styled Components](https://styled-components.com)
+### Styled Components And CSS Modules
 
-Styled components offer a way to mitigate this by using **CSS-in-JS**, or you can also use [css-modules](https://github.com/css-modules/css-modules) to include multiple versions of the same className. I won't go in detail on them but you can read about them here!
+[Styled components](https://styled-components.com) offer a way to mitigate this by using **CSS-in-JS**, or you can also use [css-modules](https://github.com/css-modules/css-modules) to include multiple versions of the same className. I won't go in detail on them but you can read about them here! Webpack handles css modules for us, if we want to **locally scope** our css classes for specific modules, we just have to change our .css files to `.module.css` files!
 
 
 ### Emulating Multiple Pages In React
@@ -251,8 +251,12 @@ Here's how we could use our useParams hook within our component:
 ```tsx
 import { useParams } from "react-router-dom";
 
+interface IdentifierParams {
+    currentSection : string;
+}
+
 export default function Identifier(){
-    let { currentSection } = useParams();
+    let { currentSection } = useParams<IdentifierParams>();
     return (
         <div className = "odd-component">
             The URL currently contains {currentSection}
@@ -351,8 +355,13 @@ When we parse the data of our URL within the `Route` of our `Switch`, we can do 
 When using multiple parameters with our `useParams()` hook, we can grab it the same way as with one parameter, and selectively use parameters from our url (or pass down props through render prop instead).
 
 ```tsx
+interface RandomNumParams {
+    first : string;
+    second : string;
+}
+
 export default function RandomNum(): JSX.Element {
-    const {first, second} = useParams();
+    const {first, second} = useParams<RandomNumParams>();
     return (
         <div className = "odd-component">
             This is the Random Nums Page!
