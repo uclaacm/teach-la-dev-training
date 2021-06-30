@@ -43,13 +43,6 @@ TypeScript is a **superset** of JavaScript which means that all JavaScript is va
 
 ![tsVisual](./images/tsVisual.png)
 
-#### [Compiled Vs Interpreted Languages](https://www.geeksforgeeks.org/difference-between-compiled-and-interpreted-language/)
-While JavaScript is an **interpreted language**, which means that it gets read by an interpreter like a web-browser instead of compiled into machine code, TypeScript is a **compiled language** which means that TypeScript gets converted to JavaScript when you compile it, which offers a vast number of benefits!
-
-* You can debug applications before they're being run, at compile-time.
-* Your IDE can auto-fill properties of objects (with ctrl/cmd space).
-* Compilation errors help reduce the chance of you making errors and help catch errors.
-
 # Javascript \<a subset of typescript!\>
 ## Functions
 Take a look at App and see how it is a function, Javascript functions are like that 
@@ -61,13 +54,8 @@ function meow() {
 ```
 ## Arrow Functions
 ```
-const meowArrow = () => "meow meow meow";
-```
-### How to have more than one line of code?
-```
-const meowArrowBrackets = () => {
-  // can do other things here
-  return "meow meow meow";
+const meowArrow = () => {
+ "meow meow meow";
 }
 ```
 ### Why Arrow Functions over Functions? <i>a little complex, feel free to skip</i>
