@@ -84,6 +84,8 @@ var obj = {
 ```
  
 ES6 arrow functions can’t be bound to a this keyword, so it will lexically go up a scope, and use the value of this in the scope in which it was defined.
+
+### Rule of Thumb
  
 Honestly, it’s kind of confusing, as a rule of thumb, I’d mainly make arrow functions if it is inside of anything else, and normal functions if it’s standalone.
 
