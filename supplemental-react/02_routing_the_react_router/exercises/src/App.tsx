@@ -1,38 +1,39 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import {RouteComponentProps} from "react-router-dom"
+import { RouteComponentProps } from "react-router-dom";
 import FirstPage from "./pages/FirstPage";
 import SecondPage from "./pages/SecondPage";
 import RandomNum from "./pages/RandomNum";
 import PureIdentifier from "./pages/PureIdentifier";
 import Identifier from "./pages/Identifier";
+import DescribePage from "./pages/DescribePage";
 
 import "./App.css";
+
+//fourth page
 
 function App() {
   const [firstNum, setFirstNum] = useState(5);
   const [secondNum, setSecondNum] = useState(15);
-  useEffect( () => {
+  useEffect(() => {
     function chooseNum10() {
       return Math.floor(Math.random() * 10) + 1;
     }
     function chooseNum20() {
       return chooseNum10() + 10;
     }
-    setInterval( () => {
+    setInterval(() => {
       setFirstNum(chooseNum10());
       setSecondNum(chooseNum20());
-    }, 1000)
-  },[])
-  
+    }, 1000);
+  }, []);
 
   interface IdentifierParams {
-    currentSection : string;
+    currentSection: string;
   }
 
-  interface IdentifierMatchProps extends RouteComponentProps<IdentifierParams>{
-
-  }
+  interface IdentifierMatchProps
+    extends RouteComponentProps<IdentifierParams> {}
 
   return (
     <Router>
@@ -82,16 +83,6 @@ function App() {
             <Route path="/:currentSection">
               <Identifier />
             </Route>
-
-            {/* <Route 
-              path = ":/currentSection"
-              render = {(input : RouteComponentProps<{currentSection : string }>) => 
-                (<PureIdentifier currentSection = {input.match.params.currentSection}/>)
-              }
-            /> */}
-
-            {/* The path goes to the star if the URL is empty in this case! 
-            (whenever the there are no route matches for the switch like Error 404) */}
             <Route path="*">
               <div className="odd-component">The URL is empty!</div>
             </Route>
