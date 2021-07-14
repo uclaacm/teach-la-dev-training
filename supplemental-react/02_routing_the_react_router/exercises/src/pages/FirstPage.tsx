@@ -7,7 +7,3 @@ export default function FirstPage() {
   return <div className={styles["the-dress"]}>This is The First Page!</div>;
   // <div className = "odd-component">This is The First Page!</div>
 }
-
-//Exercise: Try adding in parameters to this page
-
-let arr: number[] = ["apple"];

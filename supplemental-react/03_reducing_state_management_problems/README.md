@@ -29,7 +29,7 @@ However, today we will discuss how state management is a bit more involved for n
 
 ## How React State Management Determines Rerenders
 
-With React's state management tools like the **useState** or **useReducer** hook, the developers of React have added a level of optimization! Unlike the old `this.setState` of React class-based components, these hooks `[don't trigger a re-render](https://github.com/facebook/react/blob/master/CHANGELOG.md#1680-february-6-2019) if the previous state's value was equal to the new state's value, using an [`Object.is`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is) comparison.
+With React's state management tools like the **useState** or **useReducer** hook, the developers of React have added a level of optimization! Unlike the old `this.setState` of React class-based components, these hooks [don't trigger a re-render](https://github.com/facebook/react/blob/master/CHANGELOG.md#1680-february-6-2019) if the previous state's value was equal to the new state's value, using an [`Object.is`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is) comparison.
 
 ## Equality in JavaScript
 
@@ -78,7 +78,7 @@ Alright, now let's take a look at how references work! First, let's take a look 
 
 Now, references are different than the primitive data types that we just discussed. While primitive data types store the value directly with respect to their variables, references work differently.
 
-Referential equality is used for nested data types. (Nested data types are objects with {}, arrays with []). Let's take a look to see how references are stored in memory!
+Referential equality is used for nested data types. (Nested data types are objects with {}, arrays with [], or anything that's not the five primitive types we covered above). Let's take a look to see how references are stored in memory!
 
 | Variable | Value  | Address | Object  |
 | -------- | ------ | ------- | ------- |
@@ -99,6 +99,8 @@ If we want to create a new object in memory that's based off of the previous one
 ### The Spread Operator
 
 With the spread operator, we can create "deeper" copies of objects as opposed to "shallow" copies. Deep copies are not connected to the original data, while shallow copies are "connected" to the data by having the same reference pointer! (Which is why you get some non-update shenanigans sometimes, React uses Object.is to check for equality!)
+
+Let's try doing the same thing as above except with the spread operator this time!
 
 ```tsx
 const arr: number[] = [1, 2, 3];
@@ -126,6 +128,30 @@ After changing arr[2]'s value...
 | -------- | ------ | ------- | ------- |
 | arr      | <#001> | #001    | [1,2,4] |
 | arrRef   | <#002> | #002    | [1,2,3] |
+
+**NOTE:** The spread operator is not a fully "deep" copy, but it's one step deeper than a shallow copy. This means that it copies over all the values of the copied over array. If you have an array of arrays for instance, you would have to nest your spread operators to create a fully deep copy like so...
+
+```tsx
+//arrays of numbers
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const arr3 = [7, 8, 9];
+
+//array of the array of numbers
+const numArr = [arr1, arr2, arr3];
+
+//mapping to create a deep copy by nesting our spread operator inside of a mapping function
+const newArr = numArr.map((subArray) => [...subArray]);
+
+const shallowCopy = [...numArr];
+
+arr1[2] = 10;
+
+/*shallow copy is changed as well since its values point to the same arrays as 
+numArr even with the spread operator! */
+
+//However, newArr is correctly a deep copy!
+```
 
 ## Nested State with the useState Hook
 
@@ -195,8 +221,6 @@ Let's say for instance that we want to initialize each part of the histogram to 
 
 We can initialize it like so:
 
-Here's how we can set up an initial state!
-
 ```tsx
 const nums = [1, 2, 3, 4, 5];
 interface HistogramSection {
@@ -204,14 +228,14 @@ interface HistogramSection {
   y: number;
   weight: number;
 }
-const initialHistogram = nums.map(
-  (num) =>
-    ({
-      x: "Object " + num,
-      y: 5 * (num - 1),
-      weight: 0.2,
-    } as HistogramSection)
-);
+
+type Histogram = HistogramSection[];
+
+const initialHistogram: Histogram = nums.map((num) => ({
+  x: "Object " + num,
+  y: 20 - 5 * (num - 1),
+  weight: 0.2,
+}));
 ```
 
 We also have to set-up a reducer function which gets passed in two things:
@@ -249,20 +273,22 @@ interface HistogramAction {
   type: HistogramActionType;
   sectionName?: string;
 }
+
 const histogramReducer = (
   prevHistogram: Histogram,
   action: HistogramAction
-) => {
+): Histogram => {
   switch (action.type) {
     case HistogramActionType.INCREMENT_ALL: {
       /* return a NEW ARRAY that is based off of the previous state,
       DON'T modify the previous one!
       */
       //increment just one section
-      const newHistogram = prevHistogram.map((section) => ({
+      const newHistogram: Histogram = prevHistogram.map((section) => ({
         ...section,
         y: section.y + 1,
       }));
+      //sort the array
       newHistogram.sort((a, b) => b.y - a.y);
       return newHistogram;
     }
@@ -288,7 +314,6 @@ switch (action.type) {
         return { ...section, y: section.y + 1 };
       } else return section;
     });
-
     newHistogram.sort((a, b) => b.y - a.y);
     return newHistogram;
   }
@@ -320,14 +345,14 @@ interface HistogramAction {
 const histogramReducer = (
   prevHistogram: Histogram,
   action: HistogramAction
-) => {
+): Histogram => {
   switch (action.type) {
     case HistogramActionType.INCREMENT_ALL: {
       /* return a NEW ARRAY that is based off of the previous state,
       DON'T modify the previous one!
       */
       //increment just one section
-      const newHistogram = prevHistogram.map((section) => ({
+      const newHistogram: Histogram = prevHistogram.map((section) => ({
         ...section,
         y: section.y + 1,
       }));
@@ -342,17 +367,23 @@ const histogramReducer = (
           return { ...section, y: section.y + 1 };
         } else return section;
       });
-
       newHistogram.sort((a, b) => b.y - a.y);
       return newHistogram;
     }
 
     case HistogramActionType.RESET: {
       //reset everything to zero
-      return prevHistogram.map((section) => ({
+      const zeroHistogram: Histogram = prevHistogram.map((section) => ({
         ...section,
         y: 0,
       }));
+      //sort the histogram alphabetically
+      zeroHistogram.sort((a, b) => (a.x > b.x ? 1 : -1));
+      return zeroHistogram;
+    }
+
+    default: {
+      return prevHistogram;
     }
   }
 };
@@ -377,9 +408,11 @@ function Histogram() {
 Using our dispatcher, we can pass in our "action object" to handle changes to our nested state object.
 
 ```tsx
-function addToY(name) {
-  //We just have to call our function and the reducer handles all of the state update logic for us!
-  dispatchData({ type: INCREMENT_ONE, pay });
+function addToY(name: string) {
+  dispatchDataHistogram({
+    type: HistogramActionType.INCREMENT_ONE,
+    sectionName: name,
+  });
 }
 ```
 
