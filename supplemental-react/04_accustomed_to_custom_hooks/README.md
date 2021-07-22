@@ -15,19 +15,19 @@ This week, we'll talk about how custom hooks embody all of these concepts and **
 - [Hooked Components Handling State Logic](#hooked-components-handling-state-logic)
 - [Discrete Logic](#discrete-logic)
 - [Custom Hooks](#custom-hooks)
-  - [Why Use Custom Hooks?](#why-use-custom-hooks?)
+  - [Why Use Custom Hooks?](#why-use-custom-hooks)
   - [Custom Hooks Vs React Context](#custom-hooks-vs-react-context)
-- [Example useWindowDimensions Custom Hook](#example-usewindowdimensions-custom-hook)
-- [How Do Custom Hooks Solve Common Problems?](#how-do-custom-hooks-solve-common-problems?)
-- [How Do Custom Hooks Work?](#how-do-custom-hooks-work?)
-  - [Functional Composition](#functional-composition)
-- [Making Custom Hooks](#making-custom-hooks)
-  - [Creating Our Custom Hook Functions](#creating-our-custom-hook-functions)
-- [Using Custom Hooks](#using-custom-hooks)
 - [Custom Hooks Can Improve React App Performance](#custom-hooks-can-improve-react-app-performance)
   - [Custom Hook Performance](#custom-hook-performance)
   - [Context Performance](#context-performance)
   - [Prop Drilling Performance](#prop-drilling-performance)
+- [Example useWindowDimensions Custom Hook](#example-usewindowdimensions-custom-hook)
+- [How Do Custom Hooks Solve Common Problems?](#how-do-custom-hooks-solve-common-problems)
+- [How Do Custom Hooks Work?](#how-do-custom-hooks-work)
+  - [Functional Composition](#functional-composition)
+- [Making Custom Hooks](#making-custom-hooks)
+  - [Creating Our Custom Hook Functions](#creating-our-custom-hook-functions)
+- [Using Custom Hooks](#using-custom-hooks)
 - [Custom Hooks Use Case](#custom-hooks-use-case)
 - [Conclusion](#conclusion)
 
@@ -128,6 +128,24 @@ Besides from using custom hooks, how can we implement this functionality?
 
 ![drillingPic](https://github.com/uclaacm/teach-la-dev-training/blob/main/archive/s21/advanced_react_track/04_global_state_of_mind/pictures/propDrilling.png)
 
+## Custom Hooks Can Improve React App Performance
+
+By using the [React Developer Tools Chrome Extension](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi/related?hl=en) we can "profile" our React apps for performance and see how many times our components have to re-render!
+
+Let's take a look and compare the performance of each of the three approaches: custom hooks, context, and prop drilling, and compare how many times the "parent component" is forced to re-render even if it doesn't care about logic that only its children component use.
+
+### Custom Hook Performance
+
+![customPerf](./pictures/customHookProfiler.png)
+
+### Context Performance
+
+![contextPerf](./pictures/contextProfiler.png)
+
+### Prop-Drilling Performance
+
+![drillingPerf](./pictures/drillingProfiler.png)
+
 # How Do Custom Hooks Solve Common Problems?
 
 Performance problems of wrapping entire component trees with React Contextare solved because you only need to call the custom hook inside the components that depend on its logic.
@@ -168,7 +186,7 @@ In this example of functional composition, you can simply call a child function 
 
 Custom hooks do the exact same thing! If two components share logic that can be encapsulated into a separate component, you can create a **custom hook** that can be called multiple times within different React components.
 
-![encapsulationDigraph](./pictures/encapsulation)
+![encapsulationDigraph](./pictures/logicDependency.png)
 
 To determine if logic can be encapsulated into a separate component, take a look at what other logic it depends on. Looking at this digraph for instance, since 1,2,3 depend on each other, that logic can be encapsulated and likewise for 4,5.
 
@@ -261,24 +279,6 @@ function SonComponent() {
 ```
 
 As you can see, we don't need to use state **at all** within our component itself, but it updates as our window changes since all the state/effect logic is encapsulated within our custom hook.
-
-## Custom Hooks Can Improve React App Performance
-
-By using the [React Developer Tools Chrome Extension](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi/related?hl=en) we can "profile" our React apps for performance and see how many times our components have to re-render!
-
-Let's take a look and compare the performance of each of the three approaches: custom hooks, context, and prop drilling, and compare how many times the "parent component" is forced to re-render even if it doesn't care about logic that only its children component use.
-
-### Custom Hook Performance
-
-![customPerf](./pictures/customHookProfiler.png)
-
-### Context Performance
-
-![contextPerf](./pictures/contextProfiler.png)
-
-### Prop-Drilling Performance
-
-![drillingPerf](./pictures/drillingProfiler.png)
 
 ## Custom Hooks Use Case
 

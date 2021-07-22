@@ -1,0 +1,45 @@
+.App {
+  text-align: center;
+}
+
+.content-container {
+  background-color: #bebebe;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: calc(10px + 4vmin);
+}
+
+.subcomponent-container {
+  padding: 2vw;
+  background-color: #ebebeb;
+}
+
+.todo-container {
+  background-color: rgb(197, 255, 130);
+  margin: 2vw;
+  padding: 2vw;
+}
+
+.odd-component {
+  background-color: rgb(197, 255, 130);
+  margin: 2vw;
+  padding: 2vw;
+}
+
+.even-component {
+  background-color: #bebebe;
+  margin: 2vw;
+  padding: 2vw;
+}
+
+.button-container {
+  font-size: calc(10px + 2vmin);
+  margin: 5px;
+}
+
+.active-button {
+  background-color: rgb(197, 255, 130);
+}
