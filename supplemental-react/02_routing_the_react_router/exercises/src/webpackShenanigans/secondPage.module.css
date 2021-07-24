@@ -1,0 +1,7 @@
+/*different styling for same class name! */
+
+.the-dress {
+  /* different styling for same class name! */
+  background-color: blue;
+  color: black;
+}

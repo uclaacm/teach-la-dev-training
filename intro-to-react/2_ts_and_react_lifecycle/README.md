@@ -23,38 +23,44 @@ In this second session, we will be going over:
 TSX, how it is embedded React hidden and abstracted away
 We can insert Javascript into JSX!
 Just put it in brackets
-```
+```tsx
+  <div>
+    some HTML/CSS looking like things
         {
           // your javascript code
         }
+   </div>
 ```
+## What is TypeScript?
+
+[TypeScript](https://www.typescriptlang.org) is an open-source language built on top of JavaScript that addresses the issues of JavaScript being a dynamically typed language by adding **static type definitions.** (types that are determined at compile time)
+
+![tsVisual](./images/tsVisual.png)
+
+TypeScript is a **superset** of JavaScript which means that all JavaScript is valid TypeScript, but not all TypeScript is valid JavaScript.
+
 # Javascript \<a subset of typescript!\>
 ## Functions
 Take a look at App and see how it is a function, Javascript functions are like that 
 ### How would you create a function?
-```
+```tsx
 function meow() {
   return "meow meow meow";
 }
 ```
 ## Arrow Functions
-```
-const meowArrow = () => "meow meow meow";
-```
-### How to have more than one line of code?
-```
-const meowArrowBrackets = () => {
-  // can do other things here
-  return "meow meow meow";
+```tsx
+const meowArrow = () => {
+ return "meow meow meow";
 }
 ```
 ### Why Arrow Functions over Functions? <i>a little complex, feel free to skip</i>
-- Cleaner
+- Cleaner (shorthand as `const meowArrow = () => "meow meow meow";`)
 - Binding of `this`
 
 In classic function expressions, the this keyword is bound to different values based on the context in which it is called. With arrow functions however, this is lexically bound. It means that it uses `this` from the code that contains the arrow function.
 For example, look at the `setTimeout` function below:
-```
+```tsx
 var obj = {
   id: 42,
   counter: function counter() {
@@ -66,7 +72,7 @@ var obj = {
 ```
  
 In the ES5 example, `.bind(this)` is required to help pass this context into the function. Otherwise, by default `this` would be `undefined`.
-```
+```tsx
 var obj = {
   id: 42,
   counter: function counter() {
@@ -78,17 +84,19 @@ var obj = {
 ```
  
 ES6 arrow functions can’t be bound to a this keyword, so it will lexically go up a scope, and use the value of this in the scope in which it was defined.
+
+### Rule of Thumb
  
 Honestly, it’s kind of confusing, as a rule of thumb, I’d mainly make arrow functions if it is inside of anything else, and normal functions if it’s standalone.
 
 A lil confusing, but you’ll get the hang of it as time goes on.
 
 ## Arrays
-```
+```tsx
 const cats = ["pickles", "oscar", "mittens", "boo"];
 ```
 ## Objects
-```
+```tsx
 const cat_owner = { "alli": "pickles" };
 const cat_owners = {
   "alli": ["pickles", "oscar"],
@@ -104,7 +112,7 @@ Var - function scoped
 Let - block scoped
 
 Const - block scoped - can’t be reassigned
-```
+```tsx
 function loopThrough(array) {
   cat_owner.regina = "human"; // not an error because const itself isn't being assigned
   cat_onwer = {"alli": "human"};
@@ -124,32 +132,12 @@ If you don't know what's best, use `let` generally, and `var` on special occasio
 
 ## Spread Operator Arrays and Maps
 Opens up array / object to add more things in. This is super important and useful for states!! More on this later
-```
+```tsx
 function spreadOperatorDemo(array, object){
   const arr = [...array, "new thing for array"]
   const newObject = {"blehhh": "meow", ...newKeyAndValue}
 }
 ```
-
-# Typescript
-## What is TypeScript?
-
-[TypeScript](https://www.typescriptlang.org) is an open-source language built on top of JavaScript that addresses the issues of JavaScript being a dynamically typed language by adding **static type definitions.** (types that are determined at compile time)
-
-![tsVisual](./images/tsVisual.png)
-
-TypeScript is a **superset** of JavaScript which means that all JavaScript is valid TypeScript, but not all TypeScript is valid JavaScript.
-
-### How Does TypeScript Work?
-
-![tsVisual](./images/tsVisual.png)
-
-#### [Compiled Vs Interpreted Languages](https://www.geeksforgeeks.org/difference-between-compiled-and-interpreted-language/)
-While JavaScript is an **interpreted language**, which means that it gets read by an interpreter like a web-browser instead of compiled into machine code, TypeScript is a **compiled language** which means that TypeScript gets converted to JavaScript when you compile it, which offers a vast number of benefits!
-
-* You can debug applications before they're being run, at compile-time.
-* Your IDE can auto-fill properties of objects (with ctrl/cmd space).
-* Compilation errors help reduce the chance of you making errors and help catch errors.
 
 ## Typescript Syntax
 ### Primitive Typing
@@ -246,15 +234,15 @@ const newPet : Pet = {
 ```
 #### Types
 Even more confusing, sometimes you can define types, so you could do something like this
-```
+```tsx
 type pets = Pet[];
 ```
 or
-```
+```tsx
 type Person = Man | Woman;
 ```
 or
-```
+```tsx
 type Person = {
   name: string,
   age: number
@@ -267,29 +255,29 @@ Interfaces are better when you need to define a new object or method of an objec
 
 ## Array -  `forEach`, `map`, `reduce`
 [Take a look here for more](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
-```
+```tsx
 const cats = ["pickles", "oscar", "mittens", "meow meow"];
 ```
 
 ### `forEach`
 To iterate on each value, we can use `forEach`
-```
+```tsx
 cats.forEach((cat)=> console.log(cat + " says 'meow i want food' :("))
 ```
 ### `map`
 To iterate on each value, and return the results (in an array), we can use `map`
-```
+```tsx
 cats.map((cat)=> <>{cat} wants food >:0</>)
 ```
 ### `reduce`
 To accumulate on each value, then return the accumulated result, we can use `reudce`
-```
+```tsx
 cats.reduce((cat) => cat + " ")
 ```
 ### Other functional commands
 There are other things like `find`, `filter`, and others, but you can just try it out as need be! Generally those definitions above are more often used.
 ## Using `map` in React
-```
+```tsx
 {cats.map((cat)=> <div style={{backgroundColor: "blue"}}>{cat} wants food :0</div>)}
 ```
 ## Lists and Keys 
@@ -308,7 +296,7 @@ If you want to learn more about how React reconcilitates things, take a look (he
 `useState` is basically the same as setting state
 Remember to break up state with `[name, setName]`
 Use `setName` to setup the new state so that React knows to rerender!
-```
+```tsx
 function App() {
   const [number, setNumber] = useState(0);
   return (
@@ -324,7 +312,7 @@ function App() {
 ### Props
 This is the original input passed into a function
 - Imagine this as the things you put into a constructor
-```
+```tsx
 function Cats(props) {
   return <div>{props.name}</div>;
 }
@@ -349,7 +337,7 @@ Imagine Props as the constructor variables in C++, and the state as the member v
 
 Let’s combine these topics so that every time you press a button, the number of cats you own increases!
 Let’s bring the button and number logic into the Cats function
-```
+```tsx
 function Cats(props) {
   const [number, setNumber] = useState(0);
   return <div>
@@ -378,7 +366,7 @@ Now, let’s try to pass in the starting number!
 
 
 Let’s add in the value from the map!
-```
+```tsx
 function Cats(props) {
   const [number, setNumber] = useState(props.startingPoint);
   return <div>
@@ -405,7 +393,7 @@ function App() {
 ```
 ## Class Based
 This is getting phased out. I’m just showing yalls for reference!
-```
+```tsx
 class ComponentName extends React.Component {
   render() {
     return <div>HI I AM COMPONENT</div>;
@@ -415,7 +403,7 @@ class ComponentName extends React.Component {
 
 ### State and Props
 See here for more details: https://reactjs.org/docs/state-and-lifecycle.html
-``` 
+```tsx
 class ComponentName extends React.Component {
   constructor(props) {
     super(props);

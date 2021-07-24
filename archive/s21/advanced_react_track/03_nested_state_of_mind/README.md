@@ -3,7 +3,7 @@
 Earlier during the first session, we discussed how functional components can handle logic updates with
 the `useState` hook!
 
-![](https://raw.githubusercontent.com/uclaacm/teach-la-dev-training-s21/main/advanced_react_track/01_hooked_on_hooks/pictures/useState.png)
+![](https://raw.githubusercontent.com/uclaacm/teach-la-dev-training-s21/main/archive/s21/advanced_react_track/01_hooked_on_hooks/pictures/useState.png)
 
 However, today we will discuss how state management is a bit more involved for nested data like objects, arrays, and how new features of JavaScript/React like the [**spread operator**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) and the `useReducer` hook help simplify things!
 
