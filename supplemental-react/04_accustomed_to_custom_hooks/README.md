@@ -10,8 +10,6 @@ So far, we've been discussing how a lot of the tools/practices that we use/follo
 
 This week, we'll talk about how custom hooks embody all of these concepts and **why/how** we would use custom hooks to clean up our code!
 
-## Table of Contents
-
 - [Hooked Components Handling State Logic](#hooked-components-handling-state-logic)
 - [Discrete Logic](#discrete-logic)
 - [Custom Hooks](#custom-hooks)

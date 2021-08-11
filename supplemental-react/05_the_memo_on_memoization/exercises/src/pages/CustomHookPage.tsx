@@ -3,12 +3,18 @@ import React, { useState } from "react";
 import "../App.css";
 import { useWindowDimensions } from "../sharedLogic";
 export default function CustomHookPage() {
+  const [windowWidth, windowHeight] = useWindowDimensions();
   return (
     <div className="odd-component">
+      {windowWidth > 800 && <DisplayWhenWide />}
       <div>Window With Custom Hooks</div>
       <IntermediateComponent1 />
     </div>
   );
+}
+
+function DisplayWhenWide() {
+  return <div>Wide page huh</div>;
 }
 
 function IntermediateComponent1() {
