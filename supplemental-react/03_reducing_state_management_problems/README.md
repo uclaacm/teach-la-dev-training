@@ -138,20 +138,38 @@ const arr2 = [4, 5, 6];
 const arr3 = [7, 8, 9];
 
 //array of the array of numbers
-const numArr = [arr1, arr2, arr3];
+const arrArr = [arr1, arr2, arr3];
 
 //mapping to create a deep copy by nesting our spread operator inside of a mapping function
-const newArr = numArr.map((subArray) => [...subArray]);
+const fullyDeep = numArr.map((subArray) => [...subArray]);
 
-const shallowCopy = [...numArr];
+const stillShallow = [...numArr];
 
 arr1[2] = 10;
 
-/*shallow copy is changed as well since its values point to the same arrays as 
+/*stillShallow is changed as well since its values point to the same arrays as 
 numArr even with the spread operator! */
 
-//However, newArr is correctly a deep copy!
+//However, fullyDeep is correctly a deep copy!
 ```
+
+Representation in Memory with stillShallow and fullyDeep:
+
+| Variable     | Value  | Address | Object                 |
+| ------------ | ------ | ------- | ---------------------- |
+| arr1         | <#001> | #001    | [1,2,3]                |
+| arr2         | <#002> | #002    | [4,5,6]                |
+| arr3         | <#003> | #003    | [7,8,9]                |
+| arrArr       | <#004> | #004    | [<#001>,<#002>,<#003>] |
+| stillShallow | <#005> | #005    | [<#001>,<#002>,<#003>] |
+| fullyDeep    | <#006> | #006    | [<#006>,<#007>,<#008>] |
+| fullyDeep[0] | <#007> | #007    | [1,2,3]                |
+| fullyDeep[1] | <#008> | #008    | [4,5,6]                |
+| fullyDeep[2] | <#009> | #009    | [7,8,9]                |
+
+So, in order to make fully deep copies, you have to know the **structure** of the object you are copying and make sure that you use the spread operator when necessary to prevent shallow copy shenanigans, which is very similar to how we would use `useReducer`!
+
+![deepdeep](https://github.com/uclaacm/teach-la-dev-training/blob/main/archive/s21/advanced_react_track/03_nested_state_of_mind/pictures/complexState.png)
 
 ## Nested State with the useState Hook
 
