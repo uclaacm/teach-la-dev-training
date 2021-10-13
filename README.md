@@ -1,4 +1,5 @@
-# Summer Training Sessions On React
+# TeachLA Training Tracks
+
 
 # Intro To Web Dev
 
