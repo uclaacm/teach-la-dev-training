@@ -19,6 +19,7 @@ A lot of this content is based off/ covered inside of the [learning lab crash co
   - [Comments](#comments)
   - [Headers](#headers)
   - [Paragraphs](#paragraphs)
+  - [Links](#links)
   - [Spans](#spans)
   - [Divs](#divs)
   - [Lists](#lists)
@@ -156,6 +157,16 @@ The p tag is a paragraph of text, and is a nice way to organize lots of text.
 </p>
 '
 ```
+
+### `Links`
+
+The 'link' tag links your page to another resource, while defining the relationship between the two. This tag might seem useless right now, but we will make use of it soon in our [CSS section](#styling-with-css)!
+
+This will make more sense when we start talking about CSS, but for now we can discuss its properties:
+
+- `href`: the path to the resource
+- `rel`: the relationship of this resource to our document
+- `type`: the type of file the link points to
 
 ### Spans
 
