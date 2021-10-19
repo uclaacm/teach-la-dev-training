@@ -1,0 +1,13 @@
+.box {
+  background-color: tomato;
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+  border: 5px solid black;
+  border-top: 5px solid springgreen;
+  margin-top: 10px;
+  text-align: center;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+}

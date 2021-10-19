@@ -7,6 +7,9 @@ Now that we've looked at how plain HTML/CSS works, let's take a look at what git
 - [Git vs Github](#git-vs-github)
 - [Link To Previous CSS Writeup](#link-to-previous-css-writeup)
 - [Personal Project](#personal-project)
+- [Github And Github Pages](#github-and-github-pages)
+  - [Making a Repository](#making-a-repository)
+  - [Hosting on Github Pages](#hosting-on-github-pages)
 
 ## Git Vs GitHub
 
@@ -33,3 +36,23 @@ For a detailed guide of what we'll discuss today about CSS, take a look at the p
 ## Personal Project
 
 Now we should have all the steps needed to continue working on our personal websites! Try making a repository for it, adding more content/CSS to it, and deploying it on GitHub Pages!
+
+## Github and Github Pages
+
+Now that you've started making your own website, it's time to host it online so that other people can see it! Let's utilize GitHub and GitHub pages to do just that.
+
+### Making A Repository
+
+To make a repository, you can go to your github account and press the **New Repository** Button on the top right.
+
+![making_repo](./images/make_repo.png)
+
+Once you're there, you can follow the instructions as provided to have the source code for your website up for the world to see.
+
+If you want to provide a description of what your website is about, you can also do that by making a README.md file which uses the [markdown](https://www.markdownguide.org) language and is what this file you're reading is written in!
+
+### Hosting on Github Pages
+
+To make your website available to the public, you can go to the settings menu and go to the pages section to generate a URL for people to go to the website you just made!
+
+You can view an example of the site we just created [here](https://matthewcn56.github.io/teachla-owo/), and the repository linked to it [here](https://github.com/matthewcn56/teachla-owo).
