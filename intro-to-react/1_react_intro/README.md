@@ -10,6 +10,8 @@ Welcome welcome :) we are super excited for you to be here! In this first sessio
   - [Create React Project](#create-react-app)
   - [TSX Intro](#html-in-ts-tsx)
 
+Here's a [video of this session](https://drive.google.com/file/d/1utp-XoRSjRPeRHhMqQX1muboHiMvCsjs/view?usp=sharing)!
+
 ## Review of Git
 [Git-it](https://github.com/jlord/git-it-electron) is a super easy to use desktop app that helps you learn git if you need more resources!
 - git init
