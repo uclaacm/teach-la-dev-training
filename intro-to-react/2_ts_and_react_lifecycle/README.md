@@ -16,6 +16,8 @@ In this second session, we will be going over:
    - State
 - Why is Functional React Better
 
+Here's a video of [this session](https://drive.google.com/file/d/1oHhoiLqkuG8kSIeLeIwDTzpl1VwM1a4g/view?usp=sharing)!
+
 [We also have a little tryout if you want to practice yourself!](#tryout)
 
 # TSX
