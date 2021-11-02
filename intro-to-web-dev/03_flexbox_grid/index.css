@@ -7,8 +7,24 @@ body {
   max-width: 200px;
   padding: 25px;
   border: 5px solid greenyellow;
-  margin-top: 30px;
+  margin: 30px;
 }
+
+#classes-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: space-around;
+  background-color: tomato;
+  align-items: stretch;
+}
+
+#page-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 img {
   width: 90%;
   padding: 5%;
