@@ -3,6 +3,8 @@ In this third session, we will be highlighting:
 - How to Structure React Components
 - We will make a todo list together!
 
+Here is a [video recording](https://drive.google.com/file/d/1P-q95xgpKeY6WnS00gB_kraNl9D0agIJ/view?usp=sharing) of this session!
+
 # Mini Project Build On!
 Make a list of Foods which you remove and add to. Allow for `View Single` or `View List` of foods, and circle through the list. Like food tinder but you can see all the options also :)
 
