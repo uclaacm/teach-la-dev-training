@@ -9,12 +9,12 @@ Since we start with C++ here at UCLA, we'll cover how JS/TS are similar/differen
 ## Table of Contents
 
 - [JavaScript Vs TypeScript](#javascript-vs-typescript)
+- [Hello World](#hello-world)
+  - [Hello World In TypeScript](#hello-world-in-typescript)
 - [Node.js](#nodejs)
   - [Package Managers: NPM Vs Yarn](#package-managers-npm-vs-yarn)
   - [NPM To Yarn](#npm-to-yarn)
   - [Using Node For TypeScript](#using-node-for-typescript)
-- [Hello World](#hello-world)
-  - [Hello World In TypeScript](#hello-world-in-typescript)
 - [Variables](#variables)
 - [Primitive Types](#primitive-types)
   - [Variables in TypeScript](#variables-in-typescript)
@@ -43,11 +43,44 @@ Since we start with C++ here at UCLA, we'll cover how JS/TS are similar/differen
 
 However, TypeScript is a "superset" of JavaScript which means that it's built on top of JavaScript. **All valid JavaScript is valid TypeScript, but not all TypeScript is valid JavaScript.**
 
+![tsVisual](https://github.com/uclaacm/teach-la-dev-training/blob/main/supplemental-react/01_ts_my_type_of_language/pictures/tsVisual.png)
+
 Despite JavaScript being the most commonly used programming language in the world, developers have a love-hate relationship with it.
 
 Looking at the StackOverflow [2021 Developer Survey](https://insights.stackoverflow.com/survey/2021#most-loved-dreaded-and-wanted-language-love-dread), TypeScript was the 3rd most loved programming language while JavaScript was the 15th most loved programming language.
 
 To see why there's this divide, let's take a look at JavaScript first through the lens of C++, how to do the same thing in TypeScript, and see how TypeScript solves some of JavaScript's biggest problems!
+
+## Hello World
+
+As we said, JavaScript is heavily used within Web Applications. In fact, we can even insert JavaScript into our HTML files with the `script` tag!
+
+```html
+<div>Some Code...</div>
+<script>
+  console.log("Hello World!");
+</script>
+```
+
+The script tag executes javascript code in the browser, but it can get really messy to have one giant file with both HTML and JS. Similarly to how we can make a CSS stylesheet and link it within our HTML file, we can put our separate JavaScript code within a separate JavaScript file with the `.js` extension.
+
+We can link back to it in our code with the `src` property of our script tag!
+
+```js
+//tests.js
+console.log("Hello World!");
+```
+
+The console is an object in javascript, and we log something to it with the `.log()` method!
+
+```html
+<div>Some Code within index.html...</div>
+<script src="tests.js"></script>
+```
+
+If you refresh the page, it looks like nothing got added to our page! However, if we go into the console section of our page with `Inspect Element`, we can see that it says Hello World to us!
+
+This makes our browser execute JavaScript code, but there are actually other ways to execute JS code without your browser.
 
 ## Node.js
 
@@ -116,37 +149,6 @@ it checks for errors and gets transformed into JavaScript to the location of our
 The great thing about it is that it checks for type errors **before** we have to run the code and provides more thorough error messages which is amazing!
 
 Now, let's go over how things work in both JavaScript and TypeScript, then later we'll cover how TypeScript helps solve a lot of common issues with JavaScript!
-
-## Hello World
-
-As we said, JavaScript is heavily used within Web Applications. In fact, we can even insert JavaScript into our HTML files with the `script` tag!
-
-```html
-<div>Some Code...</div>
-<script>
-  console.log("Hello World!");
-</script>
-```
-
-The script tag executes javascript code in the browser, but it can get really messy to have one giant file with both HTML and JS. Similarly to how we can make a CSS stylesheet and link it within our HTML file, we can put our separate JavaScript code within a separate JavaScript file with the `.js` extension.
-
-We can link back to it in our code with the `src` property of our script tag!
-
-```js
-//tests.js
-console.log("Hello World!");
-```
-
-The console is an object in javascript, and we log something to it with the `.log()` method!
-
-```html
-<div>Some Code within index.html...</div>
-<script src="tests.js"></script>
-```
-
-If you refresh the page, it looks like nothing got added to our page! However, if we go into the console section of our page with `Inspect Element`, we can see that it says Hello World to us!
-
-This makes our browser execute JavaScript code, but there are actually other ways to execute JS code without your browser.
 
 ### Hello World in TypeScript
 
@@ -868,13 +870,9 @@ document.getElementById("button").addEventListener("click", function () {
 
 Let's open this up in our web browser and take a peek at what's going on.
 
-![button that increments a text counter on click](images/onclick.gif)
-
 Let's focus in a little bit on this: `document.getElementById(...) ...`. If you're looking for a direct example of the DOM in JS, here it is: the literal `document` object! This is the native JavaScript representation of the current webpage.
 
 Next, we call `getElementById()` on it, with argument `"button"`. This should be pretty self explanatory as to what it does, but let's take a look at what it actually looks like in our console:
-
-![console output of the button tag. all its properties are object fields](images/console_out.png)
 
 This is the crux of the DOM. Every tag in our document is representable as an object in native JavaScript (notice the properties `classList` or `attributes`?). We call each of these tags a **node** on our page. Why a node?
 
